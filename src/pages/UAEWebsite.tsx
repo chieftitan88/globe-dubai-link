@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Globe, Phone, MessageCircle, MapPin, Mail, Star, Shield, Zap, Users, Award, CheckCircle, Menu, X } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, User, Menu, X, MapPin, Phone, Mail, MessageCircle, Facebook, Instagram } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import LanguageToggle from '@/components/LanguageToggle';
 
@@ -12,208 +12,150 @@ const UAEWebsite = () => {
 
   const content = {
     en: {
-      title: "Maximum88",
-      subtitle: "Dubai, UAE",
+      title: "MAXIMUM 88",
+      subtitle: "CORPORATION",
+      tagline: "Discover the best you, inside and out, with our integrated beauty and wellness products.",
+      nav: {
+        home: "HOME",
+        shop: "SHOP", 
+        about: "ABOUT US",
+        joinUs: "JOIN US",
+        logIn: "LOG IN"
+      },
       hero: {
-        title: "Maximum88",
-        subtitle: "Your Gateway to Premium Services",
-        description: "Experience world-class gaming and entertainment services in the heart of Dubai. Strategic location in Al Ghurair Office Center for your convenience."
+        title: "EMPOWER YOUR BODY'S LONG-TERM HEALTH",
+        subtitle: "Wellness Made Easy: Products for a Healthier, More Confident You."
       },
-      features: {
-        title: "Why Choose Maximum88?",
-        items: [
-          {
-            icon: Shield,
-            title: "Secure & Licensed",
-            description: "Fully licensed and regulated operations with top-tier security protocols."
-          },
-          {
-            icon: Zap,
-            title: "Instant Processing",
-            description: "Lightning-fast transactions and instant account processing."
-          },
-          {
-            icon: Users,
-            title: "24/7 Support",
-            description: "Round-the-clock customer support in multiple languages."
-          },
-          {
-            icon: Award,
-            title: "Premium Experience",
-            description: "Award-winning platform with exceptional user experience."
-          }
-        ]
+      products: {
+        vert: {
+          title: "VERT SOAP",
+          subtitle: "Your 8-in-1 All-Natural Green Oasis for Glowing Skin",
+          description: "Packed with 8 green extracts to cleanse, lighten, soothe, and hydrate your skin in just 2 weeks!"
+        },
+        maxdiet: {
+          title: "MAXDIET", 
+          subtitle: "Feeling sluggish or weighed down? Unleash Your Inner Vitality",
+          description: "Advanced formula for natural weight management and energy boost"
+        },
+        rouge: {
+          title: "ROUGE",
+          subtitle: "Achieve radiant skin in 2 weeks",
+          description: "with our all-natural red fruit & flower soap enriched with 8 powerful extracts!"
+        },
+        acaiberry: {
+          title: "ACAI BERRY",
+          description: "Antioxidant-rich superfruit for ultimate wellness"
+        },
+        maxigold: {
+          title: "MAXIGOLD",
+          subtitle: "Your morning cup of energy and turmeric sunshine!",
+          description: "Start your day like a champion – MAXIGOLD: Your morning cup of energy and turmeric sunshine!"
+        }
       },
-      services: {
-        title: "Our Services",
-        subtitle: "Comprehensive solutions for the UAE market",
-        items: [
-          {
-            title: "Gaming Platform",
-            description: "State-of-the-art gaming platform with the latest games and features.",
-            features: ["Live Casino", "Sports Betting", "Slot Games", "Card Games"]
-          },
-          {
-            title: "Financial Services",
-            description: "Secure and fast financial transactions with multiple payment options.",
-            features: ["Instant Deposits", "Fast Withdrawals", "Multiple Currencies", "Secure Banking"]
-          },
-          {
-            title: "VIP Services",
-            description: "Exclusive VIP treatment with personalized account management.",
-            features: ["Personal Manager", "Special Bonuses", "Priority Support", "Exclusive Events"]
-          },
-          {
-            title: "Mobile Experience",
-            description: "Full-featured mobile app for gaming on the go.",
-            features: ["iOS & Android", "Live Streaming", "Push Notifications", "Offline Mode"]
-          }
-        ]
-      },
-      testimonials: {
-        title: "What Our Members Say",
-        items: [
-          {
-            name: "Ahmed Al-Rashid",
-            company: "Dubai Resident",
-            text: "Outstanding service and amazing gaming experience. The Dubai office team is very professional.",
-            rating: 5
-          },
-          {
-            name: "Sarah Johnson",
-            company: "Expat Professional",
-            text: "Best gaming platform in UAE. Fast payouts and excellent customer service.",
-            rating: 5
-          },
-          {
-            name: "Mohammad Hassan",
-            company: "Local Business Owner",
-            text: "Reliable, secure, and entertaining. Maximum88 exceeded all my expectations.",
-            rating: 5
-          }
-        ]
+      sections: {
+        wellness: "Wellness that works. From the inside out. #BESTLIFEEVER",
+        whoWeAre: "WHO WE ARE",
+        aboutText: "At Maximum 88, we're passionate about empowering people to achieve their wellness goals – both physically and financially. Discover our amazing products designed to help you thrive, and join our community in the UAE this September – get ready for over-all wellness!",
+        unlockSecrets: "UNLOCK THE TROPICAL SECRETS TO WELLNESS",
+        maxijuice: "Maxijuice: A Supercharged Elixir for a Vibrant You",
+        goldSection: "WE'VE FOUND GOLD!",
+        joinFamily: "Join the Maximum88 Family",
+        joinText: "Craft your dream life with Maximum 88 as you have the potential to boost your income and ditch the rigid schedule. Be your own boss and work when it fits your world."
       },
       contact: {
-        title: "Contact Us",
-        subtitle: "Get in touch with our Dubai office",
         office: "Dubai Office",
         address: "836B 8th Floor, Al Ghurair Office Center, Riga, Deira, Dubai, UAE",
         hotline: "Customer Hotline: 04 882 3697",
         whatsapp: "Viber/WhatsApp: +971 52 963 4682",
         email: "Email: info@maximum88.ae",
-        luzonOffice: "Luzon Office also available for Philippines operations",
-        cta: "Get Started",
-        hours: "Operating Hours: Sunday - Thursday, 9:00 AM - 6:00 PM GST"
+        support: "support@maximum88.com"
       },
-      nav: {
-        home: "Home",
-        services: "Services",
-        about: "About",
-        testimonials: "Reviews",
-        contact: "Contact"
+      footer: {
+        useLinks: "USE LINK",
+        exploreMore: "EXPLORE MORE",
+        contact: "CONTACT",
+        cookiePolicy: "COOKIE POLICY",
+        incomeDisclosure: "INCOME DISCLOSURE STATEMENT",
+        companyPolicy: "COMPANY POLICY AND PROCEDURE",
+        accessibility: "ACCESSIBILITY",
+        disputeResolution: "DISPUTE RESOLUTION POLICY",
+        privacyNotice: "PRIVACY NOTICE",
+        returnPolicy: "RETURN POLICY",
+        copyright: "Copyright 2024 Designed & Built by Maximum88.ae"
       },
       backToSelection: "← Back to Country Selection"
     },
     ar: {
-      title: "ماكسيموم88",
-      subtitle: "دبي، الإمارات العربية المتحدة",
+      title: "ماكسيموم 88",
+      subtitle: "المؤسسة",
+      tagline: "اكتشف أفضل ما لديك، من الداخل والخارج، مع منتجاتنا المتكاملة للجمال والعافية.",
+      nav: {
+        home: "الرئيسية",
+        shop: "المتجر",
+        about: "من نحن",
+        joinUs: "انضم إلينا",
+        logIn: "تسجيل الدخول"
+      },
       hero: {
-        title: "ماكسيموم88",
-        subtitle: "بوابتك للخدمات المتميزة",
-        description: "استمتع بخدمات الألعاب والترفيه عالمية المستوى في قلب دبي. موقع استراتيجي في مركز الغرير التجاري لراحتك."
+        title: "تمكين صحة جسمك على المدى الطويل",
+        subtitle: "العافية سهلة: منتجات لحياة أكثر صحة وثقة."
       },
-      features: {
-        title: "لماذا تختار ماكسيموم88؟",
-        items: [
-          {
-            icon: Shield,
-            title: "آمن ومرخص",
-            description: "عمليات مرخصة ومنظمة بالكامل مع بروتوكولات أمان من الدرجة الأولى."
-          },
-          {
-            icon: Zap,
-            title: "معالجة فورية",
-            description: "معاملات فائقة السرعة ومعالجة فورية للحسابات."
-          },
-          {
-            icon: Users,
-            title: "دعم على مدار الساعة",
-            description: "دعم عملاء على مدار الساعة بلغات متعددة."
-          },
-          {
-            icon: Award,
-            title: "تجربة متميزة",
-            description: "منصة حائزة على جوائز مع تجربة مستخدم استثنائية."
-          }
-        ]
+      products: {
+        vert: {
+          title: "صابون فيرت",
+          subtitle: "واحتك الخضراء الطبيعية 8 في 1 للبشرة المتوهجة",
+          description: "مليء بـ 8 مستخلصات خضراء لتنظيف وتفتيح وتهدئة وترطيب بشرتك في أسبوعين فقط!"
+        },
+        maxdiet: {
+          title: "ماكس دايت",
+          subtitle: "هل تشعر بالخمول أو الثقل؟ أطلق حيويتك الداخلية",
+          description: "تركيبة متقدمة لإدارة الوزن الطبيعي وزيادة الطاقة"
+        },
+        rouge: {
+          title: "روج",
+          subtitle: "احصل على بشرة متألقة في أسبوعين",
+          description: "مع صابون الفواكه والزهور الحمراء الطبيعي المدعم بـ 8 مستخلصات قوية!"
+        },
+        acaiberry: {
+          title: "أكاي بيري",
+          description: "فاكهة خارقة غنية بمضادات الأكسدة للعافية القصوى"
+        },
+        maxigold: {
+          title: "ماكسي جولد",
+          subtitle: "كوبك الصباحي من الطاقة وأشعة الكركم الذهبية!",
+          description: "ابدأ يومك كبطل - ماكسي جولد: كوبك الصباحي من الطاقة وأشعة الكركم الذهبية!"
+        }
       },
-      services: {
-        title: "خدماتنا",
-        subtitle: "حلول شاملة للسوق الإماراتي",
-        items: [
-          {
-            title: "منصة الألعاب",
-            description: "منصة ألعاب حديثة مع أحدث الألعاب والميزات.",
-            features: ["كازينو مباشر", "رهان رياضي", "ألعاب السلوت", "ألعاب الورق"]
-          },
-          {
-            title: "الخدمات المالية",
-            description: "معاملات مالية آمنة وسريعة مع خيارات دفع متعددة.",
-            features: ["إيداعات فورية", "سحوبات سريعة", "عملات متعددة", "خدمات مصرفية آمنة"]
-          },
-          {
-            title: "خدمات VIP",
-            description: "معاملة VIP حصرية مع إدارة حسابات شخصية.",
-            features: ["مدير شخصي", "مكافآت خاصة", "دعم أولوية", "فعاليات حصرية"]
-          },
-          {
-            title: "تجربة الهاتف المحمول",
-            description: "تطبيق محمول كامل المواصفات للعب أثناء التنقل.",
-            features: ["iOS وأندرويد", "بث مباشر", "إشعارات فورية", "وضع عدم الاتصال"]
-          }
-        ]
-      },
-      testimonials: {
-        title: "ماذا يقول أعضاؤنا",
-        items: [
-          {
-            name: "أحمد الراشد",
-            company: "مقيم في دبي",
-            text: "خدمة متميزة وتجربة ألعاب رائعة. فريق مكتب دبي محترف جداً.",
-            rating: 5
-          },
-          {
-            name: "سارة جونسون",
-            company: "مهنية مغتربة",
-            text: "أفضل منصة ألعاب في الإمارات. مدفوعات سريعة وخدمة عملاء ممتازة.",
-            rating: 5
-          },
-          {
-            name: "محمد حسن",
-            company: "صاحب عمل محلي",
-            text: "موثوق وآمن ومسلي. ماكسيموم88 تجاوز كل توقعاتي.",
-            rating: 5
-          }
-        ]
+      sections: {
+        wellness: "عافية تعمل. من الداخل إلى الخارج. #أفضل_حياة_على_الإطلاق",
+        whoWeAre: "من نحن",
+        aboutText: "في ماكسيموم 88، نحن متحمسون لتمكين الناس من تحقيق أهداف العافية - جسدياً ومالياً. اكتشف منتجاتنا المذهلة المصممة لمساعدتك على الازدهار، وانضم لمجتمعنا في الإمارات هذا سبتمبر - استعد للعافية الشاملة!",
+        unlockSecrets: "اكتشف أسرار العافية الاستوائية",
+        maxijuice: "ماكسي جوس: إكسير فائق الشحن لحياة نابضة بالحياة",
+        goldSection: "لقد وجدنا الذهب!",
+        joinFamily: "انضم لعائلة ماكسيموم88",
+        joinText: "اصنع حياة أحلامك مع ماكسيموم 88 حيث لديك القدرة على زيادة دخلك والتخلص من الجدول الزمني الصارم. كن رئيس نفسك واعمل عندما يناسب عالمك."
       },
       contact: {
-        title: "تواصل معنا",
-        subtitle: "تواصل مع مكتبنا في دبي",
         office: "مكتب دبي",
         address: "836B الطابق الثامن، مركز الغرير التجاري، ريغا، ديرة، دبي، الإمارات العربية المتحدة",
         hotline: "خط العملاء: 04 882 3697",
         whatsapp: "فايبر/واتساب: +971 52 963 4682",
         email: "البريد الإلكتروني: info@maximum88.ae",
-        luzonOffice: "مكتب لوزون متاح أيضاً لعمليات الفلبين",
-        cta: "ابدأ الآن",
-        hours: "ساعات العمل: الأحد - الخميس، 9:00 صباحاً - 6:00 مساءً بتوقيت الخليج"
+        support: "support@maximum88.com"
       },
-      nav: {
-        home: "الرئيسية",
-        services: "الخدمات",
-        about: "حولنا",
-        testimonials: "التقييمات",
-        contact: "اتصل بنا"
+      footer: {
+        useLinks: "استخدم الرابط",
+        exploreMore: "اكتشف المزيد",
+        contact: "اتصل بنا",
+        cookiePolicy: "سياسة ملفات تعريف الارتباط",
+        incomeDisclosure: "بيان الكشف عن الدخل",
+        companyPolicy: "سياسة الشركة والإجراءات",
+        accessibility: "إمكانية الوصول",
+        disputeResolution: "سياسة حل النزاعات",
+        privacyNotice: "إشعار الخصوصية",
+        returnPolicy: "سياسة الإرجاع",
+        copyright: "حقوق الطبع والنشر 2024 مصمم ومبني بواسطة Maximum88.ae"
       },
       backToSelection: "← العودة لاختيار البلد"
     }
@@ -225,350 +167,350 @@ const UAEWebsite = () => {
   return (
     <div className={`min-h-screen bg-white ${isRTL ? 'rtl' : 'ltr'}`}>
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center space-x-3"
-            >
-              <div className="w-10 h-10 bg-gradient-to-r from-red-600 to-red-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M88</span>
+      <header className="sticky top-0 z-50 bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Top bar with tagline */}
+          <div className="bg-red-600 text-white text-center py-2 text-sm -mx-4">
+            {currentContent.tagline}
+          </div>
+          
+          {/* Main header */}
+          <div className="flex items-center justify-between py-4">
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                <span className="text-white font-bold text-lg">88</span>
               </div>
               <div>
-                <span className="text-2xl font-bold text-gray-900">
-                  {currentContent.title}
-                </span>
-                <div className="text-sm text-red-600 font-medium">
-                  🇦🇪 {currentContent.subtitle}
-                </div>
+                <h1 className="text-2xl font-bold text-gray-900">{currentContent.title}</h1>
+                <p className="text-sm text-red-600 font-medium">{currentContent.subtitle}</p>
               </div>
-            </motion.div>
+            </div>
 
-            <div className="flex items-center space-x-6">
-              <nav className="hidden md:flex space-x-8">
-                <a href="#home" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.home}
-                </a>
-                <a href="#about" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.about}
-                </a>
-                <a href="#services" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.services}
-                </a>
-                <a href="#testimonials" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.testimonials}
-                </a>
-                <a href="#contact" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.contact}
-                </a>
-              </nav>
-              
+            {/* Navigation */}
+            <nav className="hidden lg:flex items-center space-x-8">
+              <a href="#home" className="text-gray-700 hover:text-red-600 font-medium">{currentContent.nav.home}</a>
+              <a href="#shop" className="text-gray-700 hover:text-red-600 font-medium">{currentContent.nav.shop}</a>
+              <a href="#about" className="text-gray-700 hover:text-red-600 font-medium">{currentContent.nav.about}</a>
+              <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer" />
+              <button className="bg-red-600 text-white px-6 py-2 rounded font-medium hover:bg-red-700">
+                {currentContent.nav.joinUs}
+              </button>
+              <button className="border border-red-600 text-red-600 px-6 py-2 rounded font-medium hover:bg-red-600 hover:text-white">
+                {currentContent.nav.logIn}
+              </button>
+            </nav>
+
+            <div className="flex items-center space-x-4">
               <LanguageToggle language={language} onLanguageChange={setLanguage} />
-              
               <button
                 onClick={() => navigate('/')}
-                className="text-gray-600 hover:text-red-600 transition-colors text-sm font-medium"
+                className="text-gray-600 hover:text-red-600 text-sm"
               >
                 {currentContent.backToSelection}
               </button>
-
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden text-gray-600 hover:text-red-600"
+                className="lg:hidden"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </div>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="md:hidden mt-4 py-4 border-t"
-            >
-              <nav className="flex flex-col space-y-3">
-                <a href="#home" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.home}
-                </a>
-                <a href="#about" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.about}
-                </a>
-                <a href="#services" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.services}
-                </a>
-                <a href="#testimonials" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.testimonials}
-                </a>
-                <a href="#contact" className="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                  {currentContent.nav.contact}
-                </a>
-              </nav>
-            </motion.div>
-          )}
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="py-20 px-4 bg-gradient-to-br from-red-50 to-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900">
-              {currentContent.hero.title}
-            </h1>
-            <p className="text-2xl md:text-3xl text-red-600 font-semibold mb-8">
-              {currentContent.hero.subtitle}
-            </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              {currentContent.hero.description}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:bg-red-700 transition-colors"
-              >
-                {currentContent.contact.cta}
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-red-600 text-red-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-600 hover:text-white transition-colors"
-              >
-                Learn More
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="about" className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              {currentContent.features.title}
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {currentContent.features.items.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow text-center"
-              >
-                <feature.icon className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              {currentContent.services.title}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {currentContent.services.subtitle}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {currentContent.services.items.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              {currentContent.testimonials.title}
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {currentContent.testimonials.items.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-md"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+      {/* Hero Section with Product Showcase */}
+      <section id="home" className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 items-center mb-16">
+            {/* Left - Products */}
+            <div className="space-y-8">
+              {/* OBPAR PLUS Product */}
+              <div className="bg-gray-100 rounded-lg p-6 relative">
+                <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 text-sm font-bold transform -rotate-12">
+                  OBPAR PLUS +
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.company}</p>
+                <div className="absolute bottom-4 left-4 bg-red-600 text-white px-4 py-2 text-sm font-bold">
+                  THE OCEAN'S BEST GIFT
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              {currentContent.contact.title}
-            </h2>
-            <p className="text-xl text-gray-600">
-              {currentContent.contact.subtitle}
-            </p>
-          </motion.div>
-
-          <div className="bg-gray-50 rounded-xl p-8 shadow-lg">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-red-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{currentContent.contact.office}</h3>
-                    <p className="text-gray-600">{currentContent.contact.address}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <Phone className="w-6 h-6 text-red-600 flex-shrink-0" />
-                  <p className="text-gray-900 font-medium">{currentContent.contact.hotline}</p>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <MessageCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
-                  <p className="text-gray-900 font-medium">{currentContent.contact.whatsapp}</p>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <Mail className="w-6 h-6 text-red-600 flex-shrink-0" />
-                  <p className="text-gray-900 font-medium">{currentContent.contact.email}</p>
-                </div>
-
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-gray-600 text-sm">{currentContent.contact.hours}</p>
-                  <p className="text-gray-600 text-sm mt-2">{currentContent.contact.luzonOffice}</p>
+                <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center">
+                  <span className="text-gray-500">Product Image</span>
                 </div>
               </div>
               
-              <div className="text-center">
-                <div className="text-8xl mb-6">🏢</div>
-                <div className="space-y-4">
-                  <motion.a
-                    href="tel:048823697"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="block bg-red-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-red-700 transition-colors"
-                  >
-                    📞 Call Now
-                  </motion.a>
-                  <motion.a
-                    href="https://wa.me/971529634682"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="block bg-green-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-green-700 transition-colors"
-                  >
-                    💬 WhatsApp
-                  </motion.a>
+              {/* VERT Product */}
+              <div className="bg-green-50 rounded-lg p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">VERT</h3>
+                <p className="text-gray-700 mb-4">{currentContent.products.vert.description}</p>
+                <div className="h-48 bg-gradient-to-br from-green-200 to-green-300 rounded-lg flex items-center justify-center">
+                  <span className="text-green-700">VERT Product</span>
                 </div>
               </div>
+            </div>
+
+            {/* Right - ROUGE Product */}
+            <div className="bg-red-600 text-white rounded-lg p-8">
+              <h2 className="text-3xl font-bold mb-4">ROUGE</h2>
+              <p className="mb-6">{currentContent.products.rouge.description}</p>
+              <div className="h-64 bg-red-500 rounded-lg flex items-center justify-center">
+                <span className="text-red-100">ROUGE Product</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Wellness Banner */}
+          <div className="bg-red-600 text-white text-center py-4 rounded-lg mb-16">
+            <p className="text-lg font-medium">{currentContent.sections.wellness}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Title Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            {currentContent.hero.title}
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {currentContent.hero.subtitle}
+          </p>
+        </div>
+      </section>
+
+      {/* Products Grid */}
+      <section id="shop" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* VERT SOAP */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-white rounded-lg shadow-lg p-8 text-center"
+            >
+              <div className="h-48 bg-green-100 rounded-lg mb-6 flex items-center justify-center">
+                <span className="text-green-600 font-bold">VERT SOAP</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{currentContent.products.vert.title}</h3>
+              <p className="text-gray-600 mb-4">{currentContent.products.vert.subtitle}</p>
+              <button className="text-red-600 font-medium hover:text-red-700">Read More..</button>
+            </motion.div>
+
+            {/* MAXDIET */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-lg shadow-lg p-8 text-center"
+            >
+              <div className="h-48 bg-blue-100 rounded-lg mb-6 flex items-center justify-center">
+                <span className="text-blue-600 font-bold">MAXDIET</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{currentContent.products.maxdiet.title}</h3>
+              <p className="text-gray-600 mb-4">{currentContent.products.maxdiet.subtitle}</p>
+              <button className="text-red-600 font-medium hover:text-red-700">Read More..</button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Are Section */}
+      <section id="about" className="py-16 bg-red-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="w-96 h-96 rounded-full border-4 border-white flex items-center justify-center">
+              <span className="text-6xl font-bold">MAXIMUM 88 CORPORATION</span>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <h2 className="text-4xl font-bold mb-8 text-center">{currentContent.sections.whoWeAre}</h2>
+          <p className="text-lg leading-relaxed mb-8">
+            {currentContent.sections.aboutText}
+          </p>
+          <div className="text-center">
+            <button className="bg-white text-red-600 px-8 py-3 rounded font-bold hover:bg-gray-100">
+              About Us
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Tropical Secrets Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                {currentContent.sections.unlockSecrets}
+              </h2>
+              <p className="text-xl text-gray-600 mb-8">
+                {currentContent.sections.maxijuice}
+              </p>
+            </div>
+            <div className="bg-red-500 rounded-lg p-8 text-white">
+              <div className="text-center">
+                <h3 className="text-3xl font-bold mb-4">{currentContent.products.acaiberry.title}</h3>
+                <div className="h-48 bg-red-400 rounded-lg mb-4 flex items-center justify-center">
+                  <span className="text-red-100">ACAI BERRY</span>
+                </div>
+                <button className="bg-red-600 text-white px-6 py-3 rounded font-bold hover:bg-red-700">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gold Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            {currentContent.sections.goldSection}
+          </h2>
+          <p className="text-xl text-gray-600 mb-12">
+            {currentContent.products.maxigold.subtitle}
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Video placeholder */}
+            <div className="bg-black rounded-lg h-64 flex items-center justify-center">
+              <div className="text-white text-center">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">▶</span>
+                </div>
+                <p>The Gold Coffee!</p>
+              </div>
+            </div>
+            
+            {/* Product image */}
+            <div className="bg-yellow-100 rounded-lg h-64 flex items-center justify-center">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-yellow-800 mb-2">TURMERIC & GINGER</h3>
+                <div className="text-yellow-600">MAXIGOLD Product</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Join Family Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2">
+            {/* Left - Team Image */}
+            <div className="bg-gray-200 h-96 flex items-center justify-center">
+              <span className="text-gray-500">Team Photo</span>
+            </div>
+            
+            {/* Right - Content */}
+            <div className="bg-red-600 text-white p-12 flex items-center">
+              <div>
+                <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: 'serif' }}>
+                  {currentContent.sections.joinFamily}
+                </h2>
+                <p className="text-lg mb-8 leading-relaxed">
+                  {currentContent.sections.joinText}
+                </p>
+                <button className="bg-white text-red-600 px-8 py-3 rounded font-bold hover:bg-gray-100">
+                  {currentContent.nav.joinUs}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media */}
+      <section className="py-8 bg-white">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="flex justify-center space-x-4">
+            <div className="w-12 h-12 bg-red-600 rounded flex items-center justify-center">
+              <Facebook className="w-6 h-6 text-white" />
+            </div>
+            <div className="w-12 h-12 bg-red-600 rounded flex items-center justify-center">
+              <Instagram className="w-6 h-6 text-white" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16 px-4">
+      <footer className="bg-white py-16 px-4 border-t">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            {/* Logo */}
             <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">M88</span>
+              <div className="flex items-center mb-4">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-bold text-xl">88</span>
                 </div>
-                <span className="text-xl font-bold">{currentContent.title}</span>
               </div>
-              <p className="text-gray-400">
-                Premium gaming services in Dubai, UAE
-              </p>
             </div>
+
+            {/* Use Links */}
             <div>
-              <h4 className="font-semibold mb-4">Contact Info</h4>
-              <p className="text-gray-400 text-sm mb-2">{currentContent.contact.address}</p>
-              <p className="text-gray-400 text-sm">{currentContent.contact.hotline}</p>
+              <h4 className="font-bold text-gray-900 mb-4">{currentContent.footer.useLinks}</h4>
+              <ul className="space-y-2 text-gray-600">
+                <li><a href="#" className="hover:text-red-600">{currentContent.nav.home}</a></li>
+                <li><a href="#" className="hover:text-red-600">{currentContent.nav.shop}</a></li>
+                <li><a href="#" className="hover:text-red-600">{currentContent.nav.about}</a></li>
+                <li><a href="#" className="hover:text-red-600">{currentContent.nav.joinUs}</a></li>
+              </ul>
             </div>
+
+            {/* Explore More */}
             <div>
-              <h4 className="font-semibold mb-4">Operating Hours</h4>
-              <p className="text-gray-400 text-sm">{currentContent.contact.hours}</p>
+              <h4 className="font-bold text-gray-900 mb-4">{currentContent.footer.exploreMore}</h4>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                <li><a href="#" className="hover:text-red-600">{currentContent.footer.cookiePolicy}</a></li>
+                <li><a href="#" className="hover:text-red-600">{currentContent.footer.incomeDisclosure}</a></li>
+                <li><a href="#" className="hover:text-red-600">{currentContent.footer.accessibility}</a></li>
+                <li><a href="#" className="hover:text-red-600">{currentContent.footer.privacyNotice}</a></li>
+                <li><a href="#" className="hover:text-red-600">{currentContent.footer.returnPolicy}</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-bold text-gray-900 mb-4">{currentContent.footer.contact}</h4>
+              <div className="space-y-2 text-gray-600 text-sm">
+                <div className="flex items-start space-x-2">
+                  <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <p>{currentContent.contact.address}</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <p>04 882 3697</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                  <p>+971 52 963 4682</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <p>{currentContent.contact.support}</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center">
-            <p className="text-gray-500">
-              &copy; 2024 {currentContent.title}. All rights reserved.
-            </p>
+
+          {/* Payment icons */}
+          <div className="flex justify-end space-x-4 mb-8">
+            <div className="w-8 h-6 bg-blue-600 rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">VISA</span>
+            </div>
+            <div className="w-8 h-6 bg-red-600 rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">MC</span>
+            </div>
+            <div className="w-8 h-6 bg-blue-800 rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">AE</span>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center text-sm text-gray-500 pt-8 border-t">
+            <p>{currentContent.footer.copyright}</p>
           </div>
         </div>
       </footer>
