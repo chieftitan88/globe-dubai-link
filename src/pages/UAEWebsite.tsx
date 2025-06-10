@@ -540,65 +540,6 @@ const UAEWebsite = () => {
         </div>
       </section>
 
-      {/* Tropical Secrets Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                {currentContent.sections.unlockSecrets}
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                {currentContent.sections.maxijuice}
-              </p>
-            </div>
-            <div className="bg-red-500 rounded-lg p-8 text-white">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold mb-4">{currentContent.products.acaiberry.title}</h3>
-                <div className="h-48 bg-red-400 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-red-100">ACAI BERRY</span>
-                </div>
-                <button className="bg-red-600 text-white px-6 py-3 rounded font-bold hover:bg-red-700">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gold Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            {currentContent.sections.goldSection}
-          </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            {currentContent.products.maxigold.subtitle}
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Video placeholder */}
-            <div className="bg-black rounded-lg h-64 flex items-center justify-center">
-              <div className="text-white text-center">
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">▶</span>
-                </div>
-                <p>The Gold Coffee!</p>
-              </div>
-            </div>
-            
-            {/* Product image */}
-            <div className="bg-yellow-100 rounded-lg h-64 flex items-center justify-center">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-yellow-800 mb-2">TURMERIC & GINGER</h3>
-                <div className="text-yellow-600">MAXIGOLD Product</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Join Family Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto">
