@@ -1,3 +1,4 @@
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -68,7 +69,8 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       textColor: "text-white",
       iconBg: "bg-red-400",
       iconColor: "text-white",
-      descColor: "text-red-100"
+      descColor: "text-red-100",
+      image: "/lovable-uploads/e746313b-843b-4158-a292-4f10f9f448b8.png"
     }
   ];
 
