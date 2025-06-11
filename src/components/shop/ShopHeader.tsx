@@ -57,26 +57,26 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
         
         {/* Main header */}
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-2">
             <div className="flex items-center">
               <button 
                 onClick={onNavigateBack}
-                className="mr-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="mr-3 p-1.5 hover:bg-gray-100 rounded-full transition-colors"
               >
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
-              <div className="w-16 h-16 mr-4">
+              <div className="w-12 h-12 mr-3">
                 <img 
-                  src="/lovable-uploads/9909b0fb-f960-4e22-bd1a-b6bbdbc0403a.png" 
+                  src="/lovable-uploads/ef106ea1-c939-4e2e-aaea-1fc601d1a00d.png" 
                   alt="Maximum 88 Corporation Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="ml-1">
-                <h1 className="text-3xl font-bold text-red-600 tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>
+                <h1 className="text-xl font-bold text-red-600 tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>
                   MAXIMUM 88
                 </h1>
-                <p className="text-lg text-red-600 font-bold tracking-widest" style={{ fontFamily: 'Arial, sans-serif' }}>
+                <p className="text-sm text-red-600 font-bold tracking-widest" style={{ fontFamily: 'Arial, sans-serif' }}>
                   CORPORATION
                 </p>
               </div>
@@ -99,10 +99,10 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
                 <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer transition-colors" />
                 
                 <div className="flex items-center space-x-3">
-                  <button className="bg-red-600 text-white px-6 py-2 rounded font-medium hover:bg-red-700 transition-colors text-sm tracking-wide">
+                  <button className="bg-red-600 text-white px-4 py-1.5 rounded font-medium hover:bg-red-700 transition-colors text-sm tracking-wide">
                     {currentNav.joinUs}
                   </button>
-                  <button className="border border-red-600 text-red-600 px-6 py-2 rounded font-medium hover:bg-red-600 hover:text-white transition-colors text-sm tracking-wide">
+                  <button className="border border-red-600 text-red-600 px-4 py-1.5 rounded font-medium hover:bg-red-600 hover:text-white transition-colors text-sm tracking-wide">
                     {currentNav.logIn}
                   </button>
                 </div>
