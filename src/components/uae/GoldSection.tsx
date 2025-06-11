@@ -24,18 +24,18 @@ const GoldSection = ({ language }: GoldSectionProps) => {
   const currentContent = content[language];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">
+        <h2 className="text-5xl font-bold text-gray-900 mb-6 tracking-wider" style={{ fontFamily: 'serif' }}>
           {currentContent.title}
         </h2>
-        <p className="text-xl text-gray-600 mb-12">
+        <p className="text-lg text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed">
           {currentContent.subtitle}
         </p>
         
-        <div className="grid md:grid-cols-2 gap-0">
+        <div className="grid md:grid-cols-2 gap-0 rounded-lg overflow-hidden shadow-lg">
           {/* YouTube Video */}
-          <div className="h-80 bg-black rounded-l-lg overflow-hidden">
+          <div className="h-96 bg-black">
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
@@ -47,12 +47,20 @@ const GoldSection = ({ language }: GoldSectionProps) => {
           </div>
           
           {/* Product image */}
-          <div className="h-80 rounded-r-lg overflow-hidden">
+          <div className="h-96 relative">
             <img 
               src="/lovable-uploads/0527690b-04bb-403d-84f3-225576571139.png" 
               alt="MAXIGOLD Turmeric & Ginger Coffee"
               className="w-full h-full object-cover"
             />
+            <div className="absolute top-8 left-8">
+              <h3 className="text-4xl font-bold text-white mb-2 tracking-wider" style={{ fontFamily: 'sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                TURMERIC &
+              </h3>
+              <h3 className="text-4xl font-bold text-white tracking-wider" style={{ fontFamily: 'sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                GINGER
+              </h3>
+            </div>
           </div>
         </div>
       </div>

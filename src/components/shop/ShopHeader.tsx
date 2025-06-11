@@ -54,14 +54,14 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
             >
               <ArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
-            <div className="w-12 h-12 mr-4">
+            <div className="w-18 h-18 mr-2">
               <img 
-                src="/lovable-uploads/b2a47d50-fcac-4e78-a322-0442d2cd486e.png" 
+                src="/lovable-uploads/29143bff-f72c-4ee4-83c1-3d6ebb8105d3.png" 
                 alt="Maximum 88 Corporation Logo"
                 className="w-full h-full object-contain"
               />
             </div>
-            <div>
+            <div className="ml-1">
               <h1 className="text-2xl font-bold text-gray-900">{content.title}</h1>
               <p className="text-sm text-red-600 font-medium">{content.subtitle}</p>
             </div>
