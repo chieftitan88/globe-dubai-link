@@ -23,7 +23,7 @@ const TropicalSecretsSection = ({ language }: TropicalSecretsSectionProps) => {
   const currentContent = content[language];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
