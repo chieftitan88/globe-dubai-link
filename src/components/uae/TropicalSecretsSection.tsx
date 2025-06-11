@@ -1,4 +1,5 @@
 
+
 interface TropicalSecretsSectionProps {
   language: 'en' | 'ar';
 }
@@ -39,10 +40,7 @@ const TropicalSecretsSection = ({ language }: TropicalSecretsSectionProps) => {
             </button>
           </div>
           
-          <div className="flex flex-col items-center space-y-8">
-            <h3 className="text-4xl font-bold text-red-600 tracking-wider uppercase font-mono">
-              {currentContent.acaiTitle}
-            </h3>
+          <div className="flex flex-col items-center">
             <div className="w-80 h-[500px] overflow-hidden rounded-2xl shadow-2xl">
               <img 
                 src="/lovable-uploads/6e19a3eb-eafa-4122-9093-37bdc9010213.png"
@@ -58,3 +56,4 @@ const TropicalSecretsSection = ({ language }: TropicalSecretsSectionProps) => {
 };
 
 export default TropicalSecretsSection;
+
