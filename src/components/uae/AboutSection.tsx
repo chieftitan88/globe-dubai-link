@@ -20,15 +20,8 @@ const AboutSection = ({ language }: AboutSectionProps) => {
   const currentContent = content[language];
 
   return (
-    <section id="about" className="py-16 bg-red-600 text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-96 h-96 rounded-full border-4 border-white flex items-center justify-center">
-            <span className="text-6xl font-bold">MAXIMUM 88 CORPORATION</span>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-4xl mx-auto px-4 relative z-10">
+    <section id="about" className="py-16 bg-red-600 text-white">
+      <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">{currentContent.title}</h2>
         <p className="text-lg leading-relaxed mb-8">
           {currentContent.description}
