@@ -27,22 +27,14 @@ const ShopFooter = ({ language }: ShopFooterProps) => {
     <footer className="bg-white py-16 px-6 border-t">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 mb-12">
-          {/* Logo - consistent with main page */}
-          <div className="flex items-center">
-            <div className="w-20 h-20 mr-4">
+          {/* Logo only */}
+          <div className="flex justify-center md:justify-start">
+            <div className="w-20 h-20">
               <img 
                 src="/lovable-uploads/9aa1c07e-adbb-4d87-9f95-1f5ebcb608ae.png" 
                 alt="Maximum 88 Corporation Logo"
                 className="w-full h-full object-contain"
               />
-            </div>
-            <div className="ml-1">
-              <h1 className="text-2xl font-bold text-red-600 tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>
-                MAXIMUM 88
-              </h1>
-              <p className="text-sm text-red-600 font-bold tracking-widest" style={{ fontFamily: 'Arial, sans-serif' }}>
-                CORPORATION
-              </p>
             </div>
           </div>
 
