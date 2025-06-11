@@ -50,7 +50,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
         {/* Main header */}
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-3">
+            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
               <span className="text-white font-bold text-lg">88</span>
             </div>
             <div>
@@ -60,29 +60,41 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
           </div>
 
           {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-red-600 font-medium">{currentNav.home}</a>
+          <nav className="hidden lg:flex items-center space-x-12">
+            <a href="#home" className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm">
+              {currentNav.home}
+            </a>
             <button 
               onClick={() => navigate('/uae/shop')}
-              className="text-gray-700 hover:text-red-600 font-medium"
+              className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm"
             >
               {currentNav.shop}
             </button>
-            <a href="#about" className="text-gray-700 hover:text-red-600 font-medium">{currentNav.about}</a>
-            <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer" />
-            <button className="bg-red-600 text-white px-6 py-2 rounded font-medium hover:bg-red-700">
-              {currentNav.joinUs}
-            </button>
-            <button className="border border-red-600 text-red-600 px-6 py-2 rounded font-medium hover:bg-red-600 hover:text-white">
-              {currentNav.logIn}
-            </button>
+            <a href="#about" className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm">
+              {currentNav.about}
+            </a>
+            
+            {/* Cart icon with spacing */}
+            <div className="ml-8">
+              <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer" />
+            </div>
+            
+            {/* Action buttons with proper spacing */}
+            <div className="flex items-center space-x-4 ml-8">
+              <button className="bg-red-600 text-white px-8 py-2.5 rounded font-medium hover:bg-red-700 transition-colors text-sm tracking-wide">
+                {currentNav.joinUs}
+              </button>
+              <button className="border border-red-600 text-red-600 px-8 py-2.5 rounded font-medium hover:bg-red-600 hover:text-white transition-colors text-sm tracking-wide">
+                {currentNav.logIn}
+              </button>
+            </div>
           </nav>
 
           <div className="flex items-center space-x-4">
             <LanguageToggle language={language} onLanguageChange={onLanguageChange} />
             <button
               onClick={onNavigateBack}
-              className="text-gray-600 hover:text-red-600 text-sm"
+              className="text-gray-600 hover:text-red-600 text-sm hidden lg:block"
             >
               {content.backToSelection}
             </button>

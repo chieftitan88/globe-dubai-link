@@ -54,7 +54,7 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
             >
               <ArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
-            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-3">
+            <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
               <span className="text-white font-bold text-lg">88</span>
             </div>
             <div>
@@ -64,22 +64,32 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
           </div>
 
           {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-12">
             <button 
               onClick={onNavigateBack}
-              className="text-gray-700 hover:text-red-600 font-medium"
+              className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm"
             >
               {currentNav.home}
             </button>
-            <span className="text-red-600 font-medium">{currentNav.shop}</span>
-            <a href="#about" className="text-gray-700 hover:text-red-600 font-medium">{currentNav.about}</a>
-            <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer" />
-            <button className="bg-red-600 text-white px-6 py-2 rounded font-medium hover:bg-red-700">
-              {currentNav.joinUs}
-            </button>
-            <button className="border border-red-600 text-red-600 px-6 py-2 rounded font-medium hover:bg-red-600 hover:text-white">
-              {currentNav.logIn}
-            </button>
+            <span className="text-red-600 font-medium tracking-wide text-sm">{currentNav.shop}</span>
+            <a href="#about" className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm">
+              {currentNav.about}
+            </a>
+            
+            {/* Cart icon with spacing */}
+            <div className="ml-8">
+              <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer" />
+            </div>
+            
+            {/* Action buttons with proper spacing */}
+            <div className="flex items-center space-x-4 ml-8">
+              <button className="bg-red-600 text-white px-8 py-2.5 rounded font-medium hover:bg-red-700 transition-colors text-sm tracking-wide">
+                {currentNav.joinUs}
+              </button>
+              <button className="border border-red-600 text-red-600 px-8 py-2.5 rounded font-medium hover:bg-red-600 hover:text-white transition-colors text-sm tracking-wide">
+                {currentNav.logIn}
+              </button>
+            </div>
           </nav>
 
           <div className="flex items-center space-x-4">
