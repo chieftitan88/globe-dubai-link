@@ -56,7 +56,7 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
             </button>
             <div className="w-18 h-18 mr-2">
               <img 
-                src="/lovable-uploads/29143bff-f72c-4ee4-83c1-3d6ebb8105d3.png" 
+                src="/lovable-uploads/4993a705-708a-44cc-8eb9-8503fe85a00a.png" 
                 alt="Maximum 88 Corporation Logo"
                 className="w-full h-full object-contain"
               />
