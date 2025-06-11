@@ -32,20 +32,18 @@ const TropicalSecretsSection = ({ language }: TropicalSecretsSectionProps) => {
             <p className="text-xl text-gray-600 mb-8">
               {currentContent.subtitle}
             </p>
+            <button className="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-md">
+              {currentContent.learnMore}
+            </button>
           </div>
-          <div className="bg-red-500 rounded-lg p-8 text-white">
-            <div className="text-center">
-              <h3 className="text-3xl font-bold mb-6">{currentContent.acaiTitle}</h3>
-              <div className="w-48 h-80 bg-red-400 rounded-lg mb-6 flex items-center justify-center overflow-hidden mx-auto shadow-lg">
-                <img 
-                  src="/lovable-uploads/6e19a3eb-eafa-4122-9093-37bdc9010213.png"
-                  alt="MAXJUICE Acai Berry"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <button className="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-md">
-                {currentContent.learnMore}
-              </button>
+          <div className="text-center">
+            <h3 className="text-3xl font-bold mb-6 text-red-600">{currentContent.acaiTitle}</h3>
+            <div className="w-64 h-96 mx-auto overflow-hidden rounded-lg shadow-lg">
+              <img 
+                src="/lovable-uploads/6e19a3eb-eafa-4122-9093-37bdc9010213.png"
+                alt="MAXJUICE Acai Berry"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
