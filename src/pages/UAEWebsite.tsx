@@ -5,7 +5,6 @@ import LanguageToggle from '@/components/LanguageToggle';
 import Header from '@/components/uae/Header';
 import HeroSection from '@/components/uae/HeroSection';
 import ProductShowcase from '@/components/uae/ProductShowcase';
-import WellnessSection from '@/components/uae/WellnessSection';
 import AboutSection from '@/components/uae/AboutSection';
 import TropicalSecretsSection from '@/components/uae/TropicalSecretsSection';
 import GoldSection from '@/components/uae/GoldSection';
@@ -45,7 +44,6 @@ const UAEWebsite = () => {
       
       <HeroSection language={language} />
       <ProductShowcase language={language} />
-      <WellnessSection language={language} />
       <AboutSection language={language} />
       <TropicalSecretsSection language={language} />
       <GoldSection language={language} />
