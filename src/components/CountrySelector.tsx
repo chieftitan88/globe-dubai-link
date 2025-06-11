@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -67,12 +66,17 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
         <motion.div
           key={country.id}
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ 
-            duration: 0.6, 
-            delay: 0.4 + index * 0.1,
-            type: "spring",
-            stiffness: 100
+          animate={{ 
+            opacity: 1, 
+            y: 0, 
+            scale: 1,
+            rotateY: 0,
+            transition: {
+              duration: 0.6, 
+              delay: 0.4 + index * 0.1,
+              type: "spring",
+              stiffness: 100
+            }
           }}
           whileHover={{ 
             scale: 1.08, 
@@ -83,15 +87,6 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
               stiffness: 300,
               damping: 20,
               duration: 0.4
-            }
-          }}
-          animate={{
-            scale: 1,
-            y: 0,
-            rotateY: 0,
-            transition: {
-              duration: 0.15,
-              ease: "easeOut"
             }
           }}
           whileTap={{ scale: 0.95 }}
