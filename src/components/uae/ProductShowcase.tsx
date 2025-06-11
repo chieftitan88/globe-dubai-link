@@ -1,9 +1,43 @@
 
+import { useEffect, useRef, useState } from 'react';
+
 interface ProductShowcaseProps {
   language: 'en' | 'ar';
 }
 
 const ProductShowcase = ({ language }: ProductShowcaseProps) => {
+  const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = cardRefs.current.map((ref, index) => {
+      if (!ref) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards(prev => {
+              const newVisible = [...prev];
+              newVisible[index] = true;
+              return newVisible;
+            });
+          }
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
+
   const content = {
     en: {
       title: "EMPOWER YOUR BODY'S LONG-TERM HEALTH",
@@ -47,7 +81,15 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
         {/* Products Grid */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {/* VERT SOAP */}
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div 
+            ref={(el) => cardRefs.current[0] = el}
+            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out ${
+              visibleCards[0] 
+                ? 'opacity-100 transform translate-y-0' 
+                : 'opacity-0 transform translate-y-8'
+            }`}
+            style={{ transitionDelay: '0ms' }}
+          >
             <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
               <img 
                 src="/lovable-uploads/a7b48ae8-852b-4256-b40a-a975cd760f75.png" 
@@ -65,7 +107,15 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           </div>
 
           {/* MAXDIET */}
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div 
+            ref={(el) => cardRefs.current[1] = el}
+            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out ${
+              visibleCards[1] 
+                ? 'opacity-100 transform translate-y-0' 
+                : 'opacity-0 transform translate-y-8'
+            }`}
+            style={{ transitionDelay: '200ms' }}
+          >
             <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
               <img 
                 src="/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png" 
@@ -83,7 +133,15 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           </div>
 
           {/* MAXIWHITE */}
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div 
+            ref={(el) => cardRefs.current[2] = el}
+            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out ${
+              visibleCards[2] 
+                ? 'opacity-100 transform translate-y-0' 
+                : 'opacity-0 transform translate-y-8'
+            }`}
+            style={{ transitionDelay: '400ms' }}
+          >
             <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
               <img 
                 src="/lovable-uploads/1e8e0634-bb91-4b9c-a504-bff691517971.png" 
