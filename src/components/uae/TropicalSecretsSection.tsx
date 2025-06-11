@@ -22,23 +22,28 @@ const TropicalSecretsSection = ({ language }: TropicalSecretsSectionProps) => {
   const currentContent = content[language];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              {currentContent.title}
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              {currentContent.subtitle}
-            </p>
-            <button className="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-md">
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h2 className="text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+                {currentContent.title}
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                {currentContent.subtitle}
+              </p>
+            </div>
+            <button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-lg text-lg">
               {currentContent.learnMore}
             </button>
           </div>
-          <div className="text-center">
-            <h3 className="text-3xl font-bold mb-6 text-red-600">{currentContent.acaiTitle}</h3>
-            <div className="w-64 h-96 mx-auto overflow-hidden rounded-lg shadow-lg">
+          
+          <div className="flex flex-col items-center space-y-8">
+            <h3 className="text-4xl font-bold text-red-600 tracking-wider uppercase font-mono">
+              {currentContent.acaiTitle}
+            </h3>
+            <div className="w-80 h-[500px] overflow-hidden rounded-2xl shadow-2xl">
               <img 
                 src="/lovable-uploads/6e19a3eb-eafa-4122-9093-37bdc9010213.png"
                 alt="MAXJUICE Acai Berry"
