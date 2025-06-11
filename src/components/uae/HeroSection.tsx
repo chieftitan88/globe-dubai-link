@@ -130,7 +130,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                 </div>
                 <div className="ml-8">
                   {section.image ? (
-                    <div className="w-32 h-32 rounded-lg flex items-center justify-center">
+                    <div className="w-40 h-40 rounded-lg flex items-center justify-center">
                       <img 
                         src={section.image}
                         alt={section.title}
@@ -138,7 +138,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                       />
                     </div>
                   ) : (
-                    <div className={`w-32 h-32 ${section.iconBg} rounded-lg flex items-center justify-center`}>
+                    <div className={`w-40 h-40 ${section.iconBg} rounded-lg flex items-center justify-center`}>
                       <span className={`${section.iconColor} font-bold`}>{section.title}</span>
                     </div>
                   )}
