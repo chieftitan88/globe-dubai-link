@@ -44,7 +44,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       id: 1,
       title: currentContent.pparTitle,
       subtitle: currentContent.pparSubtitle,
-      image: "/lovable-uploads/15b3478a-be0f-4291-89ac-884db2534eec.png"
+      image: "/lovable-uploads/9bfcdd11-33f1-4f95-b36a-1318989b9d94.png"
     },
     {
       id: 2,
@@ -100,23 +100,30 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                 <CarouselItem key={slide.id}>
                   <div className="relative min-h-[600px] overflow-hidden">
                     {slide.id === 1 ? (
-                      // PPAR slide with gradient background
-                      <div className="relative bg-gradient-to-br from-purple-800 via-purple-700 to-blue-800 flex items-center justify-center p-8 min-h-[600px]">
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 to-blue-900/80"></div>
-                        <div className="relative z-10 text-center text-white max-w-md">
-                          <div className="mb-8">
-                            <img 
-                              src={slide.image}
-                              alt={slide.title}
-                              className="w-56 h-56 object-contain mx-auto mb-4 drop-shadow-2xl"
-                            />
+                      // PPAR slide with full image background
+                      <div className="relative min-h-[600px]">
+                        <img 
+                          src={slide.image}
+                          alt={slide.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60"></div>
+                        <div className="absolute top-8 left-8 z-10 text-white">
+                          <div className="inline-flex items-center bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
+                            PREMIUM
                           </div>
-                          <h2 className="text-5xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
+                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-red-400 drop-shadow-lg">
                             {slide.title}
                           </h2>
-                          <p className="text-xl font-medium text-purple-100 tracking-wide">
+                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md">
                             {slide.subtitle}
                           </p>
+                        </div>
+                        <div className="absolute bottom-8 right-8 z-10">
+                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                            <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
+                            Ocean's Natural Formula
+                          </div>
                         </div>
                       </div>
                     ) : (
