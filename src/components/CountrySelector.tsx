@@ -75,39 +75,72 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
             stiffness: 100
           }}
           whileHover={{ 
-            scale: 1.05, 
-            y: -10,
-            transition: { duration: 0.2 }
+            scale: 1.08, 
+            y: -15,
+            rotateY: 5,
+            transition: { 
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              duration: 0.4
+            }
           }}
-          whileTap={{ scale: 0.98 }}
-          className={`relative overflow-hidden rounded-3xl cursor-pointer group shadow-2xl hover:shadow-3xl transition-all duration-300 ${
+          whileTap={{ scale: 0.95 }}
+          className={`relative overflow-hidden rounded-3xl cursor-pointer group shadow-2xl hover:shadow-3xl transition-all duration-500 ${
             selectedCountry === country.id ? 'ring-4 ring-red-500' : ''
           }`}
           onClick={() => handleCountryClick(country)}
+          style={{ transformStyle: 'preserve-3d' }}
         >
-          <div className={`absolute inset-0 bg-gradient-to-br ${country.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
+          <motion.div 
+            className={`absolute inset-0 bg-gradient-to-br ${country.gradient} opacity-10 transition-opacity duration-500`}
+            whileHover={{ opacity: 0.25 }}
+          />
           
           <div className="relative bg-white/80 backdrop-blur-lg border border-white/20 rounded-3xl p-8 h-full shadow-xl">
             <div className="text-center">
-              <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
+              <motion.div 
+                className="text-6xl mb-4 drop-shadow-lg"
+                whileHover={{ 
+                  scale: 1.2,
+                  rotate: [0, -5, 5, 0],
+                  transition: {
+                    scale: { duration: 0.3 },
+                    rotate: { duration: 0.6, repeat: Infinity }
+                  }
+                }}
+              >
                 {country.flag}
-              </div>
+              </motion.div>
               
-              <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-red-600 transition-colors">
+              <motion.h3 
+                className="text-2xl font-bold text-slate-800 mb-3 transition-colors duration-300"
+                whileHover={{ color: "#dc2626" }}
+              >
                 {country.name}
-              </h3>
+              </motion.h3>
               
-              <p className="text-slate-600 mb-6 leading-relaxed">
+              <motion.p 
+                className="text-slate-600 mb-6 leading-relaxed"
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.2 }}
+              >
                 {country.description}
-              </p>
+              </motion.p>
               
-              <div className="flex items-center justify-center text-red-600 group-hover:text-red-700 font-semibold">
+              <motion.div 
+                className="flex items-center justify-center text-red-600 group-hover:text-red-700 font-semibold"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
                 <span className="mr-2">Select Region</span>
-                <ArrowRight 
-                  size={16} 
-                  className="group-hover:translate-x-1 transition-transform duration-300" 
-                />
-              </div>
+                <motion.div
+                  whileHover={{ x: 8 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ArrowRight size={16} />
+                </motion.div>
+              </motion.div>
             </div>
           </div>
           
