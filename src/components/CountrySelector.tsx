@@ -18,21 +18,21 @@ const countries: Country[] = [
     name: 'Philippines',
     flag: '🇵🇭',
     description: 'Serving the beautiful archipelago with premium services',
-    gradient: 'from-blue-500 to-red-500',
+    gradient: 'from-red-500 to-red-700',
   },
   {
     id: 'usa',
     name: 'United States',
     flag: '🇺🇸',
     description: 'Excellence in service across the United States',
-    gradient: 'from-blue-600 to-red-600',
+    gradient: 'from-red-600 to-red-800',
   },
   {
     id: 'uae',
     name: 'Dubai, UAE',
     flag: '🇦🇪',
     description: 'Premium services in the heart of the Middle East',
-    gradient: 'from-green-500 to-red-500',
+    gradient: 'from-red-500 to-red-700',
     route: '/uae',
   },
 ];
@@ -74,8 +74,8 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
             transition: { duration: 0.2 }
           }}
           whileTap={{ scale: 0.98 }}
-          className={`relative overflow-hidden rounded-3xl cursor-pointer group ${
-            selectedCountry === country.id ? 'ring-4 ring-blue-500' : ''
+          className={`relative overflow-hidden rounded-3xl cursor-pointer group shadow-2xl hover:shadow-3xl transition-all duration-300 ${
+            selectedCountry === country.id ? 'ring-4 ring-red-500' : ''
           }`}
           onClick={() => handleCountryClick(country)}
         >
@@ -83,11 +83,11 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
           
           <div className="relative bg-white/80 backdrop-blur-lg border border-white/20 rounded-3xl p-8 h-full shadow-xl">
             <div className="text-center">
-              <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                 {country.flag}
               </div>
               
-              <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-red-600 transition-colors">
                 {country.name}
               </h3>
               
@@ -95,7 +95,7 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
                 {country.description}
               </p>
               
-              <div className="flex items-center justify-center text-blue-600 group-hover:text-blue-700 font-semibold">
+              <div className="flex items-center justify-center text-red-600 group-hover:text-red-700 font-semibold">
                 <span className="mr-2">Select Region</span>
                 <ArrowRight 
                   size={16} 
@@ -109,7 +109,7 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className="absolute inset-0 border-4 border-blue-500 rounded-3xl pointer-events-none"
+              className="absolute inset-0 border-4 border-red-500 rounded-3xl pointer-events-none"
             />
           )}
         </motion.div>
