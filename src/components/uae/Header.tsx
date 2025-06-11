@@ -61,7 +61,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             <div className="flex items-center">
-              <div className="w-10 h-10 mr-3">
+              <div className="w-16 h-16 mr-3">
                 <img 
                   src="/lovable-uploads/ba86ee30-04da-4fa6-861a-8b8f1b494c1f.png" 
                   alt="Maximum 88 Corporation Logo"
