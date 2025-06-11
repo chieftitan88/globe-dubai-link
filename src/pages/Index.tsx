@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import CountrySelector from '@/components/CountrySelector';
@@ -9,9 +8,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50 flex flex-col relative overflow-hidden">
       {/* Bottom Gradient Background */}
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-red-500 via-red-600 to-transparent opacity-20 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-red-700 via-red-500 to-transparent opacity-15 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-red-800 via-red-600 to-white opacity-30 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-red-700 via-red-800 to-transparent opacity-25 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-red-800 via-red-700 to-transparent opacity-20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-800 via-red-700 to-white opacity-35 pointer-events-none" />
 
       {/* Enhanced Dynamic Background Graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
