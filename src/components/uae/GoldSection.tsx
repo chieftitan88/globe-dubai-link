@@ -1,5 +1,4 @@
 
-
 interface GoldSectionProps {
   language: 'en' | 'ar';
 }
@@ -48,11 +47,11 @@ const GoldSection = ({ language }: GoldSectionProps) => {
           </div>
           
           {/* Product image */}
-          <div className="h-96 relative">
+          <div className="h-96 relative overflow-hidden">
             <img 
               src="/lovable-uploads/7277e931-ba41-45cf-b016-a93ba112d855.png" 
               alt="MAXIGOLD Turmeric & Ginger Coffee"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute top-8 left-8">
               <h3 className="text-4xl font-bold text-white mb-2 tracking-wider" style={{ fontFamily: 'sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
@@ -70,4 +69,3 @@ const GoldSection = ({ language }: GoldSectionProps) => {
 };
 
 export default GoldSection;
-
