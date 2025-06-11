@@ -2,13 +2,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import CountrySelector from '@/components/CountrySelector';
-import { Globe } from 'lucide-react';
 
 const Index = () => {
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-red-50 flex flex-col">
       {/* Header */}
       <header className="relative z-10 p-6">
         <motion.div 
@@ -18,17 +17,18 @@ const Index = () => {
           className="flex items-center justify-between max-w-7xl mx-auto"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-              <Globe className="w-6 h-6 text-white" />
+            <div className="w-10 h-10">
+              <img 
+                src="/lovable-uploads/ba86ee30-04da-4fa6-861a-8b8f1b494c1f.png" 
+                alt="Maximum 88 Corporation Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Maximum88
-            </span>
           </div>
           <nav className="hidden md:flex space-x-8">
-            <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">About</a>
-            <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">Services</a>
-            <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">Contact</a>
+            <a href="#" className="text-slate-600 hover:text-red-600 transition-colors font-medium">About</a>
+            <a href="#" className="text-slate-600 hover:text-red-600 transition-colors font-medium">Services</a>
+            <a href="#" className="text-slate-600 hover:text-red-600 transition-colors font-medium">Contact</a>
           </nav>
         </motion.div>
       </header>
@@ -42,10 +42,10 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-red-600 to-red-800 bg-clip-text text-transparent leading-tight">
               Choose Your
               <br />
-              <span className="text-transparent bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text">
+              <span className="text-transparent bg-gradient-to-r from-red-500 to-red-700 bg-clip-text">
                 Region
               </span>
             </h1>
