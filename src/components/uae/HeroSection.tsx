@@ -50,7 +50,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       id: 2,
       title: currentContent.maxdietTitle,
       subtitle: currentContent.maxdietSubtitle,
-      image: "/lovable-uploads/073e884d-322b-4777-8015-6a718551038f.png"
+      image: "/lovable-uploads/2823f44f-74c1-4ffc-86db-bcd31160b9fc.png"
     }
   ];
 
@@ -98,38 +98,55 @@ const HeroSection = ({ language }: HeroSectionProps) => {
             <CarouselContent>
               {leftSlides.map((slide) => (
                 <CarouselItem key={slide.id}>
-                  <div className="relative bg-gradient-to-br from-purple-800 via-purple-700 to-blue-800 flex items-center justify-center p-8 min-h-[600px]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 to-blue-900/80"></div>
-                    <div className="relative z-10 text-center text-white max-w-md">
-                      <div className="mb-8">
-                        <div className="relative">
-                          <img 
-                            src={slide.image}
-                            alt={slide.title}
-                            className="w-56 h-56 object-contain mx-auto mb-4 drop-shadow-2xl"
-                          />
-                          {slide.id === 2 && (
-                            <div className="absolute -top-2 -right-2 bg-yellow-400 text-purple-800 text-xs font-bold px-2 py-1 rounded-full animate-pulse">
-                              NEW
-                            </div>
-                          )}
+                  <div className="relative min-h-[600px] overflow-hidden">
+                    {slide.id === 1 ? (
+                      // PPAR slide with gradient background
+                      <div className="relative bg-gradient-to-br from-purple-800 via-purple-700 to-blue-800 flex items-center justify-center p-8 min-h-[600px]">
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 to-blue-900/80"></div>
+                        <div className="relative z-10 text-center text-white max-w-md">
+                          <div className="mb-8">
+                            <img 
+                              src={slide.image}
+                              alt={slide.title}
+                              className="w-56 h-56 object-contain mx-auto mb-4 drop-shadow-2xl"
+                            />
+                          </div>
+                          <h2 className="text-5xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
+                            {slide.title}
+                          </h2>
+                          <p className="text-xl font-medium text-purple-100 tracking-wide">
+                            {slide.subtitle}
+                          </p>
                         </div>
                       </div>
-                      <h2 className="text-5xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
-                        {slide.title}
-                      </h2>
-                      <p className="text-xl font-medium text-purple-100 tracking-wide">
-                        {slide.subtitle}
-                      </p>
-                      {slide.id === 2 && (
-                        <div className="mt-6">
-                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm">
+                    ) : (
+                      // MAXDIET slide with full image background
+                      <div className="relative min-h-[600px]">
+                        <img 
+                          src={slide.image}
+                          alt={slide.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+                        <div className="absolute top-8 left-8 z-10 text-white">
+                          <div className="inline-flex items-center bg-yellow-400 text-purple-800 text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
+                            NEW
+                          </div>
+                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400 drop-shadow-lg">
+                            {slide.title}
+                          </h2>
+                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md">
+                            {slide.subtitle}
+                          </p>
+                        </div>
+                        <div className="absolute bottom-8 right-8 z-10">
+                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
                             <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                             Premium Quality Tablets
                           </div>
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </CarouselItem>
               ))}
