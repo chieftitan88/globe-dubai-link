@@ -41,7 +41,6 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
   const content = {
     en: {
       title: "EMPOWER YOUR BODY'S LONG-TERM HEALTH",
-      subtitle: "Wellness Made Easy: Products for a Healthier, More Confident You.",
       vertTitle: "VERT SOAP",
       vertDescription: "Your 8-in-1 All-Natural Green Oasis for Glowing S",
       maxdietTitle: "MAXDIET",
@@ -52,7 +51,6 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
     },
     ar: {
       title: "قوي صحة جسمك طويلة المدى",
-      subtitle: "عافية سهلة: منتجات لحياة أكثر صحة وثقة.",
       vertTitle: "صابون فيرت",
       vertDescription: "واحتك الخضراء الطبيعية 8 في 1 للبشرة المتوهجة",
       maxdietTitle: "ماكس دايت",
@@ -73,9 +71,6 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             {currentContent.title}
           </h2>
-          <p className="text-xl text-gray-600">
-            {currentContent.subtitle}
-          </p>
         </div>
 
         {/* Products Grid */}
