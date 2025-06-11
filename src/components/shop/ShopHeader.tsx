@@ -54,7 +54,7 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
             >
               <ArrowLeft className="w-5 h-5 text-gray-600" />
             </button>
-            <div className="w-12 h-12 mr-2">
+            <div className="w-14 h-14 mr-2">
               <img 
                 src="/lovable-uploads/4993a705-708a-44cc-8eb9-8503fe85a00a.png" 
                 alt="Maximum 88 Corporation Logo"
