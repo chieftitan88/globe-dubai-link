@@ -1,4 +1,3 @@
-
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import HeaderMenu from '@/components/HeaderMenu';
@@ -50,7 +49,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
         {/* Main header */}
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <div className="w-18 h-18 mr-2">
+            <div className="w-7 h-7 mr-2">
               <img 
                 src="/lovable-uploads/4993a705-708a-44cc-8eb9-8503fe85a00a.png" 
                 alt="Maximum 88 Corporation Logo"
