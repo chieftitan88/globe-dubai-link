@@ -1,3 +1,4 @@
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -17,6 +18,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       rougeDescription: "Achieve radiant skin in 2 weeks with our all-natural red fruit & flower soap enriched with 8 powerful extracts!",
       maxdietTitle: "MAXDIET",
       maxdietDescription: "Transform your wellness journey with our premium health supplement designed for optimal nutrition.",
+      maxdietSubtitle: "PREMIUM WELLNESS FORMULA",
       maxjuiceTitle: "MAXJUICE",
       maxjuiceDescription: "Experience the power of natural superfruits with our antioxidant-rich wellness drink."
     },
@@ -29,6 +31,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       rougeDescription: "احصل على بشرة مشرقة في أسبوعين مع صابون الفواكه الحمراء والزهور الطبيعي بالكامل المعزز بـ 8 مستخلصات قوية!",
       maxdietTitle: "ماكس دايت",
       maxdietDescription: "حول رحلة عافيتك مع مكملنا الصحي المتميز المصمم للتغذية المثلى.",
+      maxdietSubtitle: "تركيبة العافية المتميزة",
       maxjuiceTitle: "ماكسي جوس",
       maxjuiceDescription: "اختبر قوة الفواكه الفائقة الطبيعية مع مشروب العافية الغني بمضادات الأكسدة."
     }
@@ -46,8 +49,8 @@ const HeroSection = ({ language }: HeroSectionProps) => {
     {
       id: 2,
       title: currentContent.maxdietTitle,
-      subtitle: "WELLNESS TRANSFORMATION",
-      image: "/lovable-uploads/15b3478a-be0f-4291-89ac-884db2534eec.png"
+      subtitle: currentContent.maxdietSubtitle,
+      image: "/lovable-uploads/073e884d-322b-4777-8015-6a718551038f.png"
     }
   ];
 
@@ -81,7 +84,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
           <Carousel
             plugins={[
               Autoplay({
-                delay: 4000,
+                delay: 5000,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true,
               }),
@@ -95,33 +98,56 @@ const HeroSection = ({ language }: HeroSectionProps) => {
             <CarouselContent>
               {leftSlides.map((slide) => (
                 <CarouselItem key={slide.id}>
-                  <div className="relative bg-gray-800 flex items-center justify-center p-8 min-h-[600px]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
+                  <div className="relative bg-gradient-to-br from-purple-800 via-purple-700 to-blue-800 flex items-center justify-center p-8 min-h-[600px]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 to-blue-900/80"></div>
                     <div className="relative z-10 text-center text-white max-w-md">
                       <div className="mb-8">
-                        <img 
-                          src={slide.image}
-                          alt={slide.title}
-                          className="w-48 h-48 object-contain mx-auto mb-4"
-                        />
+                        <div className="relative">
+                          <img 
+                            src={slide.image}
+                            alt={slide.title}
+                            className="w-56 h-56 object-contain mx-auto mb-4 drop-shadow-2xl"
+                          />
+                          {slide.id === 2 && (
+                            <div className="absolute -top-2 -right-2 bg-yellow-400 text-purple-800 text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                              NEW
+                            </div>
+                          )}
+                        </div>
                       </div>
-                      <h2 className="text-4xl font-bold mb-2 text-red-400">{slide.title}</h2>
-                      <p className="text-xl font-medium">{slide.subtitle}</p>
+                      <h2 className="text-5xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
+                        {slide.title}
+                      </h2>
+                      <p className="text-xl font-medium text-purple-100 tracking-wide">
+                        {slide.subtitle}
+                      </p>
+                      {slide.id === 2 && (
+                        <div className="mt-6">
+                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm">
+                            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                            Premium Quality Tablets
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-4 bg-white/20 border-white/30 text-white hover:bg-white/30" />
+            <CarouselNext className="right-4 bg-white/20 border-white/30 text-white hover:bg-white/30" />
           </Carousel>
         </div>
 
         {/* Right - Static Sections */}
         <div className="grid grid-rows-2">
           {rightSections.map((section, index) => (
-            <div key={index} className={`${section.bgColor} p-8 flex items-center ${section.textColor}`}>
-              <div className="flex items-center justify-between w-full">
+            <div key={index} className={`${section.bgColor} p-8 flex items-center ${section.textColor} relative overflow-hidden`}>
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-4 right-4 w-32 h-32 bg-white rounded-full"></div>
+                <div className="absolute bottom-4 left-4 w-16 h-16 bg-white rounded-full"></div>
+              </div>
+              <div className="flex items-center justify-between w-full relative z-10">
                 <div className="flex-1">
                   <h3 className="text-3xl font-bold mb-3">{section.title}</h3>
                   <p className={`text-sm leading-relaxed ${section.descColor || 'text-gray-700'}`}>
@@ -129,19 +155,13 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                   </p>
                 </div>
                 <div className="ml-8">
-                  {section.image ? (
-                    <div className="w-48 h-48 rounded-lg flex items-center justify-center">
-                      <img 
-                        src={section.image}
-                        alt={section.title}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  ) : (
-                    <div className={`w-48 h-48 ${section.iconBg} rounded-lg flex items-center justify-center`}>
-                      <span className={`${section.iconColor} font-bold`}>{section.title}</span>
-                    </div>
-                  )}
+                  <div className="w-48 h-48 rounded-xl flex items-center justify-center shadow-lg">
+                    <img 
+                      src={section.image}
+                      alt={section.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
