@@ -33,23 +33,26 @@ const GoldSection = ({ language }: GoldSectionProps) => {
           {currentContent.subtitle}
         </p>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Video placeholder */}
-          <div className="bg-black rounded-lg h-64 flex items-center justify-center">
-            <div className="text-white text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">▶</span>
-              </div>
-              <p>{currentContent.videoTitle}</p>
-            </div>
+        <div className="grid md:grid-cols-2 gap-0">
+          {/* YouTube Video */}
+          <div className="h-80 bg-black rounded-l-lg overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              title={currentContent.videoTitle}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
           
           {/* Product image */}
-          <div className="bg-yellow-100 rounded-lg h-64 flex items-center justify-center">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-yellow-800 mb-2">{currentContent.productTitle}</h3>
-              <div className="text-yellow-600">{currentContent.productSubtitle}</div>
-            </div>
+          <div className="h-80 rounded-r-lg overflow-hidden">
+            <img 
+              src="/lovable-uploads/0527690b-04bb-403d-84f3-225576571139.png" 
+              alt="MAXIGOLD Turmeric & Ginger Coffee"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
