@@ -1,6 +1,7 @@
 
 import { Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -20,12 +21,14 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, language }: ProductCardProps) => {
+  const navigate = useNavigate();
+  
   const content = {
     en: {
-      addToCart: "Add to Cart"
+      viewProduct: "View Product"
     },
     ar: {
-      addToCart: "أضف للسلة"
+      viewProduct: "عرض المنتج"
     }
   };
 
@@ -37,8 +40,12 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
     ));
   };
 
+  const handleProductClick = () => {
+    navigate(`/uae/shop/product/${product.id}`);
+  };
+
   return (
-    <Card className="h-full hover:shadow-lg transition-shadow">
+    <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer" onClick={handleProductClick}>
       <CardContent className="p-6">
         {/* Product Image Placeholder */}
         <div className={`h-48 ${product.imageStyle} rounded-lg mb-4 flex items-center justify-center`}>
@@ -67,9 +74,9 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
           <span className="text-sm text-gray-500">({product.reviews})</span>
         </div>
         
-        {/* Add to Cart Button */}
+        {/* View Product Button */}
         <button className="w-full bg-red-600 text-white py-3 rounded font-medium hover:bg-red-700 transition-colors">
-          {currentContent.addToCart}
+          {currentContent.viewProduct}
         </button>
       </CardContent>
     </Card>
