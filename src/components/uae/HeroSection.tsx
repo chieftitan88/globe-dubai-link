@@ -59,7 +59,8 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       bgColor: "bg-green-50",
       textColor: "text-green-800",
       iconBg: "bg-green-200",
-      iconColor: "text-green-800"
+      iconColor: "text-green-800",
+      image: "/lovable-uploads/a06cb92e-8e72-42e4-b60c-4e5d585ace06.png"
     },
     {
       title: currentContent.rougeTitle,
@@ -128,9 +129,19 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                   </p>
                 </div>
                 <div className="ml-8">
-                  <div className={`w-32 h-32 ${section.iconBg} rounded-lg flex items-center justify-center`}>
-                    <span className={`${section.iconColor} font-bold`}>{section.title}</span>
-                  </div>
+                  {section.image ? (
+                    <div className="w-32 h-32 rounded-lg flex items-center justify-center">
+                      <img 
+                        src={section.image}
+                        alt={section.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`w-32 h-32 ${section.iconBg} rounded-lg flex items-center justify-center`}>
+                      <span className={`${section.iconColor} font-bold`}>{section.title}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
