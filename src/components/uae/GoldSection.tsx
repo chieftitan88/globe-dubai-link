@@ -51,7 +51,7 @@ const GoldSection = ({ language }: GoldSectionProps) => {
             <img 
               src="/lovable-uploads/7277e931-ba41-45cf-b016-a93ba112d855.png" 
               alt="MAXIGOLD Turmeric & Ginger Coffee"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center scale-110"
             />
             <div className="absolute top-8 left-8">
               <h3 className="text-4xl font-bold text-white mb-2 tracking-wider" style={{ fontFamily: 'sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
