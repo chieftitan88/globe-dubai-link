@@ -19,7 +19,16 @@ interface HeaderMenuProps {
 const HeaderMenu = ({ language, onLanguageChange, onNavigateBack, backToSelectionText }: HeaderMenuProps) => {
   const languageOptions = {
     en: { label: 'English', flag: '🇬🇧' },
-    ar: { label: 'العربية', flag: '🇦🇪' }
+    ar: { 
+      label: 'العربية', 
+      flag: (
+        <img 
+          src="/lovable-uploads/abdc01bd-7fec-4e09-b2d7-2716b2f94b8b.png" 
+          alt="UAE" 
+          className="w-4 h-3 object-cover rounded-sm"
+        />
+      )
+    }
   };
 
   const currentLanguage = languageOptions[language];
@@ -29,7 +38,10 @@ const HeaderMenu = ({ language, onLanguageChange, onNavigateBack, backToSelectio
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="flex items-center space-x-2 text-white hover:text-red-100 hover:bg-red-700/50 border-0">
           <Globe className="w-5 h-5 text-white" />
-          <span className="hidden sm:inline text-sm text-white">{currentLanguage.flag} {currentLanguage.label}</span>
+          <span className="hidden sm:inline text-sm text-white flex items-center space-x-1">
+            <span>{currentLanguage.flag}</span>
+            <span>{currentLanguage.label}</span>
+          </span>
           <span className="sm:hidden text-sm text-white">{currentLanguage.flag}</span>
           <ChevronDown className="w-4 h-4 text-white" />
         </Button>
@@ -48,7 +60,11 @@ const HeaderMenu = ({ language, onLanguageChange, onNavigateBack, backToSelectio
           onClick={() => onLanguageChange('ar')}
           className={`flex items-center space-x-2 hover:bg-red-50 cursor-pointer ${language === 'ar' ? 'bg-red-50 text-red-600' : 'text-gray-700'}`}
         >
-          <span>🇦🇪</span>
+          <img 
+            src="/lovable-uploads/abdc01bd-7fec-4e09-b2d7-2716b2f94b8b.png" 
+            alt="UAE" 
+            className="w-4 h-3 object-cover rounded-sm"
+          />
           <span>العربية</span>
           {language === 'ar' && <span className="ml-auto text-red-600">✓</span>}
         </DropdownMenuItem>
