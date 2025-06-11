@@ -1,5 +1,4 @@
 
-
 interface ProductShowcaseProps {
   language: 'en' | 'ar';
 }
@@ -68,9 +67,11 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           {/* MAXDIET */}
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
             <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
-              <div className="w-32 h-32 bg-blue-100 rounded-lg flex items-center justify-center">
-                <span className="text-blue-800 font-bold text-lg">MAXDIET</span>
-              </div>
+              <img 
+                src="/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png" 
+                alt="MAXDIET - Premium Diet Supplement"
+                className="w-44 h-44 object-cover rounded-lg"
+              />
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-bold text-gray-900">{currentContent.maxdietTitle}</h3>
@@ -84,9 +85,11 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           {/* MAXIWHITE */}
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
             <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
-              <div className="w-32 h-32 bg-purple-100 rounded-lg flex items-center justify-center">
-                <span className="text-purple-800 font-bold text-lg">MAXIWHITE</span>
-              </div>
+              <img 
+                src="/lovable-uploads/1e8e0634-bb91-4b9c-a504-bff691517971.png" 
+                alt="MAXIWHITE - Premium Whitening Solution"
+                className="w-44 h-44 object-cover rounded-lg"
+              />
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-bold text-gray-900">{currentContent.maxiwhiteTitle}</h3>
@@ -103,4 +106,3 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
 };
 
 export default ProductShowcase;
-
