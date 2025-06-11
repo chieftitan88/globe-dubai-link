@@ -37,126 +37,106 @@ const HeroSection = ({ language }: HeroSectionProps) => {
 
   const currentContent = content[language];
 
-  const slides = [
+  const leftSlides = [
     {
       id: 1,
-      leftContent: {
-        title: currentContent.pparTitle,
-        subtitle: currentContent.pparSubtitle,
-        image: "/lovable-uploads/15b3478a-be0f-4291-89ac-884db2534eec.png"
-      },
-      rightSections: [
-        {
-          title: currentContent.vertTitle,
-          description: currentContent.vertDescription,
-          bgColor: "bg-green-50",
-          textColor: "text-green-800",
-          iconBg: "bg-green-200",
-          iconColor: "text-green-800"
-        },
-        {
-          title: currentContent.rougeTitle,
-          description: currentContent.rougeDescription,
-          bgColor: "bg-red-500",
-          textColor: "text-white",
-          iconBg: "bg-red-400",
-          iconColor: "text-white",
-          descColor: "text-red-100"
-        }
-      ]
+      title: currentContent.pparTitle,
+      subtitle: currentContent.pparSubtitle,
+      image: "/lovable-uploads/15b3478a-be0f-4291-89ac-884db2534eec.png"
     },
     {
       id: 2,
-      leftContent: {
-        title: currentContent.maxdietTitle,
-        subtitle: "WELLNESS TRANSFORMATION",
-        image: "/lovable-uploads/15b3478a-be0f-4291-89ac-884db2534eec.png"
-      },
-      rightSections: [
-        {
-          title: currentContent.maxjuiceTitle,
-          description: currentContent.maxjuiceDescription,
-          bgColor: "bg-purple-50",
-          textColor: "text-purple-800",
-          iconBg: "bg-purple-200",
-          iconColor: "text-purple-800"
-        },
-        {
-          title: currentContent.maxdietTitle,
-          description: currentContent.maxdietDescription,
-          bgColor: "bg-blue-500",
-          textColor: "text-white",
-          iconBg: "bg-blue-400",
-          iconColor: "text-white",
-          descColor: "text-blue-100"
-        }
-      ]
+      title: currentContent.maxdietTitle,
+      subtitle: "WELLNESS TRANSFORMATION",
+      image: "/lovable-uploads/15b3478a-be0f-4291-89ac-884db2534eec.png"
+    }
+  ];
+
+  const rightSections = [
+    {
+      title: currentContent.vertTitle,
+      description: currentContent.vertDescription,
+      bgColor: "bg-green-50",
+      textColor: "text-green-800",
+      iconBg: "bg-green-200",
+      iconColor: "text-green-800"
+    },
+    {
+      title: currentContent.rougeTitle,
+      description: currentContent.rougeDescription,
+      bgColor: "bg-red-500",
+      textColor: "text-white",
+      iconBg: "bg-red-400",
+      iconColor: "text-white",
+      descColor: "text-red-100"
     }
   ];
 
   return (
     <section className="relative">
-      <Carousel
-        plugins={[
-          Autoplay({
-            delay: 4000,
-            stopOnInteraction: false,
-            stopOnMouseEnter: true,
-          }),
-        ]}
-        className="w-full"
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-      >
-        <CarouselContent>
-          {slides.map((slide) => (
-            <CarouselItem key={slide.id}>
-              <div className="grid lg:grid-cols-2 min-h-[600px]">
-                {/* Left - Main Product */}
-                <div className="relative bg-gray-800 flex items-center justify-center p-8">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
-                  <div className="relative z-10 text-center text-white max-w-md">
-                    <div className="mb-8">
-                      <img 
-                        src={slide.leftContent.image}
-                        alt={slide.leftContent.title}
-                        className="w-48 h-48 object-contain mx-auto mb-4"
-                      />
+      <div className="grid lg:grid-cols-2 min-h-[600px]">
+        {/* Left - Slider */}
+        <div className="relative bg-gray-800">
+          <Carousel
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
+            className="w-full h-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {leftSlides.map((slide) => (
+                <CarouselItem key={slide.id}>
+                  <div className="relative bg-gray-800 flex items-center justify-center p-8 min-h-[600px]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
+                    <div className="relative z-10 text-center text-white max-w-md">
+                      <div className="mb-8">
+                        <img 
+                          src={slide.image}
+                          alt={slide.title}
+                          className="w-48 h-48 object-contain mx-auto mb-4"
+                        />
+                      </div>
+                      <h2 className="text-4xl font-bold mb-2 text-red-400">{slide.title}</h2>
+                      <p className="text-xl font-medium">{slide.subtitle}</p>
                     </div>
-                    <h2 className="text-4xl font-bold mb-2 text-red-400">{slide.leftContent.title}</h2>
-                    <p className="text-xl font-medium">{slide.leftContent.subtitle}</p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
+        </div>
+
+        {/* Right - Static Sections */}
+        <div className="grid grid-rows-2">
+          {rightSections.map((section, index) => (
+            <div key={index} className={`${section.bgColor} p-8 flex items-center ${section.textColor}`}>
+              <div className="flex items-center justify-between w-full">
+                <div className="flex-1">
+                  <h3 className="text-3xl font-bold mb-3">{section.title}</h3>
+                  <p className={`text-sm leading-relaxed ${section.descColor || 'text-gray-700'}`}>
+                    {section.description}
+                  </p>
+                </div>
+                <div className="ml-8">
+                  <div className={`w-32 h-32 ${section.iconBg} rounded-lg flex items-center justify-center`}>
+                    <span className={`${section.iconColor} font-bold`}>{section.title}</span>
                   </div>
                 </div>
-
-                {/* Right - Product Showcases */}
-                <div className="grid grid-rows-2">
-                  {slide.rightSections.map((section, index) => (
-                    <div key={index} className={`${section.bgColor} p-8 flex items-center ${section.textColor}`}>
-                      <div className="flex items-center justify-between w-full">
-                        <div className="flex-1">
-                          <h3 className="text-3xl font-bold mb-3">{section.title}</h3>
-                          <p className={`text-sm leading-relaxed ${section.descColor || 'text-gray-700'}`}>
-                            {section.description}
-                          </p>
-                        </div>
-                        <div className="ml-8">
-                          <div className={`w-32 h-32 ${section.iconBg} rounded-lg flex items-center justify-center`}>
-                            <span className={`${section.iconColor} font-bold`}>{section.title}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
-            </CarouselItem>
+            </div>
           ))}
-        </CarouselContent>
-        <CarouselPrevious className="left-4" />
-        <CarouselNext className="right-4" />
-      </Carousel>
+        </div>
+      </div>
     </section>
   );
 };
