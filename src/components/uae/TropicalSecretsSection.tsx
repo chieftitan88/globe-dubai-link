@@ -1,0 +1,53 @@
+
+interface TropicalSecretsSectionProps {
+  language: 'en' | 'ar';
+}
+
+const TropicalSecretsSection = ({ language }: TropicalSecretsSectionProps) => {
+  const content = {
+    en: {
+      title: "UNLOCK THE TROPICAL SECRETS TO WELLNESS",
+      subtitle: "Maxijuice: A Supercharged Elixir for a Vibrant You",
+      acaiTitle: "ACAI BERRY",
+      learnMore: "Learn More"
+    },
+    ar: {
+      title: "اكتشف أسرار المناطق الاستوائية للعافية",
+      subtitle: "ماكسي جوس: إكسير فائق الشحن لحياة نابضة بالحيوية",
+      acaiTitle: "توت الأساي",
+      learnMore: "اعرف المزيد"
+    }
+  };
+
+  const currentContent = content[language];
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              {currentContent.title}
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              {currentContent.subtitle}
+            </p>
+          </div>
+          <div className="bg-red-500 rounded-lg p-8 text-white">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold mb-4">{currentContent.acaiTitle}</h3>
+              <div className="h-48 bg-red-400 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-red-100">ACAI BERRY</span>
+              </div>
+              <button className="bg-red-600 text-white px-6 py-3 rounded font-bold hover:bg-red-700">
+                {currentContent.learnMore}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TropicalSecretsSection;
