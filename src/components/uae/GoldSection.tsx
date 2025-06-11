@@ -1,4 +1,5 @@
 
+
 interface GoldSectionProps {
   language: 'en' | 'ar';
 }
@@ -49,7 +50,7 @@ const GoldSection = ({ language }: GoldSectionProps) => {
           {/* Product image */}
           <div className="h-96 relative">
             <img 
-              src="/lovable-uploads/0527690b-04bb-403d-84f3-225576571139.png" 
+              src="/lovable-uploads/7277e931-ba41-45cf-b016-a93ba112d855.png" 
               alt="MAXIGOLD Turmeric & Ginger Coffee"
               className="w-full h-full object-cover"
             />
@@ -69,3 +70,4 @@ const GoldSection = ({ language }: GoldSectionProps) => {
 };
 
 export default GoldSection;
+
