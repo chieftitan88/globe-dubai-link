@@ -42,18 +42,26 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="w-full">
-        {/* Top bar with tagline and language selector */}
-        <div className="bg-red-600 text-white py-1 text-sm">
-          <div className="w-full px-4 flex items-center justify-between">
-            <div className="text-center flex-1">
+        {/* Top bar with tagline and language selector - using 3-column grid */}
+        <div className="bg-red-600 text-white py-2 text-sm">
+          <div className="w-full px-4 grid grid-cols-3 items-center">
+            {/* Left column - empty for balance */}
+            <div></div>
+            
+            {/* Center column - tagline */}
+            <div className="text-center">
               {content.tagline}
             </div>
-            <HeaderMenu 
-              language={language}
-              onLanguageChange={onLanguageChange}
-              onNavigateBack={onNavigateBack}
-              backToSelectionText={content.backToSelection}
-            />
+            
+            {/* Right column - language selector */}
+            <div className="flex justify-end">
+              <HeaderMenu 
+                language={language}
+                onLanguageChange={onLanguageChange}
+                onNavigateBack={onNavigateBack}
+                backToSelectionText={content.backToSelection}
+              />
+            </div>
           </div>
         </div>
         
