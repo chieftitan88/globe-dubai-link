@@ -51,7 +51,7 @@ const Index = () => {
         />
         
         <motion.div
-          className="absolute w-64 h-1 bg-gradient-to-r from-slate-400 via-red-400 to-slate-400 opacity-30 rounded-full"
+          className="absolute w-64 h-1 bg-gradient-to-r from-red-400 via-red-600 to-red-400 opacity-30 rounded-full"
           style={{ top: '70%', right: '-10%' }}
           animate={{
             x: [0, -(window.innerWidth + 100)],
@@ -85,7 +85,7 @@ const Index = () => {
         />
 
         <motion.div
-          className="absolute w-24 h-24 bg-gradient-to-br from-slate-300 to-red-300 opacity-25"
+          className="absolute w-24 h-24 bg-gradient-to-br from-red-300 to-red-500 opacity-25"
           style={{ top: '60%', right: '15%' }}
           animate={{
             borderRadius: ["25%", "0%", "50%", "0%", "25%"],
@@ -121,7 +121,7 @@ const Index = () => {
         />
 
         <motion.div
-          className="absolute w-16 h-16 bg-gradient-to-br from-slate-400 to-transparent rounded-full opacity-35 blur-sm"
+          className="absolute w-16 h-16 bg-gradient-to-br from-red-400 to-transparent rounded-full opacity-35 blur-sm"
           style={{ top: '80%', left: '20%' }}
           animate={{
             scale: [1, 1.4, 0.8, 1.6, 1],
@@ -170,7 +170,7 @@ const Index = () => {
         />
 
         <motion.div
-          className="absolute w-1 h-32 bg-gradient-to-b from-slate-400 to-transparent opacity-25"
+          className="absolute w-1 h-32 bg-gradient-to-b from-red-400 to-transparent opacity-25"
           style={{ bottom: '20%', right: '30%' }}
           animate={{
             rotate: [0, -360],
@@ -281,7 +281,7 @@ const Index = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center text-slate-500"
+          className="text-center text-red-500"
         >
           <p>&copy; 2024 Maximum88. All rights reserved.</p>
         </motion.div>
