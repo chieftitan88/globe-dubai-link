@@ -20,7 +20,7 @@ const JoinFamilySection = ({ language }: JoinFamilySectionProps) => {
   const currentContent = content[language];
 
   return (
-    <section>
+    <section className="mb-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 h-[320px]">
           {/* Left - Team Image */}
