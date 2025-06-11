@@ -10,6 +10,7 @@ interface Country {
   description: string;
   gradient: string;
   route?: string;
+  externalUrl?: string;
 }
 
 const countries: Country[] = [
@@ -26,6 +27,7 @@ const countries: Country[] = [
     flag: '🇺🇸',
     description: 'Excellence in service across the United States',
     gradient: 'from-red-600 to-red-800',
+    externalUrl: 'https://www.maximum88.us',
   },
   {
     id: 'uae',
@@ -48,7 +50,11 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
   const handleCountryClick = (country: Country) => {
     onSelectCountry(country.id);
     
-    if (country.route) {
+    if (country.externalUrl) {
+      setTimeout(() => {
+        window.open(country.externalUrl, '_blank');
+      }, 500);
+    } else if (country.route) {
       setTimeout(() => {
         navigate(country.route!);
       }, 500);
