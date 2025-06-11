@@ -44,8 +44,12 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* VERT SOAP */}
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <div className="w-32 h-32 bg-green-100 rounded-lg mx-auto mb-6 flex items-center justify-center">
-              <span className="text-green-800 font-bold text-lg">VERT</span>
+            <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/a7b48ae8-852b-4256-b40a-a975cd760f75.png" 
+                alt="VERT Soap - 8in1 All Natural Green Soap"
+                className="w-full h-full object-contain"
+              />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">{currentContent.vertTitle}</h3>
             <p className="text-gray-600 mb-4">{currentContent.vertDescription}</p>
