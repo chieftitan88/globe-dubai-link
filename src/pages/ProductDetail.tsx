@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, Plus, Minus, Heart, Share2 } from 'lucide-react';
@@ -83,7 +82,10 @@ const ProductDetail = () => {
 
   const currentContent = content[language];
   const isRTL = language === 'ar';
-  const product = products[id as keyof typeof products] || products[1];
+  
+  // Convert string ID to number and get product, with fallback to product 1
+  const productId = id ? parseInt(id, 10) : 1;
+  const product = products[productId as keyof typeof products] || products[1];
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
