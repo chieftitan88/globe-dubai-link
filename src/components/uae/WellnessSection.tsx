@@ -1,4 +1,3 @@
-
 interface WellnessSectionProps {
   language: 'en' | 'ar';
 }
