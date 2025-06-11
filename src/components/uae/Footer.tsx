@@ -52,8 +52,12 @@ const Footer = ({ language }: FooterProps) => {
           {/* Logo */}
           <div>
             <div className="flex items-center mb-4">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">88</span>
+              <div className="w-16 h-16 mr-3">
+                <img 
+                  src="/lovable-uploads/9aa1c07e-adbb-4d87-9f95-1f5ebcb608ae.png" 
+                  alt="Maximum 88 Corporation Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
           </div>
