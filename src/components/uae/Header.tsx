@@ -63,7 +63,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
             <div className="flex items-center">
               <div className="w-10 h-10 mr-3">
                 <img 
-                  src="/lovable-uploads/ef106ea1-c939-4e2e-aaea-1fc601d1a00d.png" 
+                  src="/lovable-uploads/ba86ee30-04da-4fa6-861a-8b8f1b494c1f.png" 
                   alt="Maximum 88 Corporation Logo"
                   className="w-full h-full object-contain"
                 />
