@@ -24,7 +24,7 @@ const JoinFamilySection = ({ language }: JoinFamilySectionProps) => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2">
           {/* Left - Team Image */}
-          <div className="h-96 overflow-hidden">
+          <div className="overflow-hidden">
             <img 
               src="/lovable-uploads/cf523259-dabc-49d4-97a6-6b84a8613287.png" 
               alt="Maximum88 Team"
