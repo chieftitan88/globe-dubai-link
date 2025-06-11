@@ -38,7 +38,7 @@ const GoldSection = ({ language }: GoldSectionProps) => {
           <div className="h-96 bg-black">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              src="https://www.youtube.com/embed/cuiXIwBwnv4"
               title={currentContent.videoTitle}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
