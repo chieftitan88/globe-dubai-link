@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -84,12 +85,18 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
             rotateY: 5,
             transition: { 
               type: "spring",
-              stiffness: 300,
-              damping: 20,
-              duration: 0.4
+              stiffness: 400,
+              damping: 25,
+              duration: 0.3,
+              ease: "easeOut"
             }
           }}
           whileTap={{ scale: 0.95 }}
+          transition={{
+            scale: { duration: 0.2, ease: "easeInOut" },
+            y: { duration: 0.25, ease: "easeInOut" },
+            rotateY: { duration: 0.2, ease: "easeInOut" }
+          }}
           className={`relative overflow-hidden rounded-3xl cursor-pointer group shadow-2xl hover:shadow-3xl transition-all duration-200 ${
             selectedCountry === country.id ? 'ring-4 ring-red-500' : ''
           }`}
@@ -98,8 +105,13 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
         >
           <motion.div 
             className={`absolute inset-0 bg-gradient-to-br ${country.gradient} opacity-10`}
-            whileHover={{ opacity: 0.25, transition: { duration: 0.3 } }}
-            animate={{ opacity: 0.1, transition: { duration: 0.15 } }}
+            whileHover={{ 
+              opacity: 0.25, 
+              transition: { duration: 0.3, ease: "easeOut" } 
+            }}
+            transition={{ 
+              opacity: { duration: 0.2, ease: "easeInOut" }
+            }}
           />
           
           <div className="relative bg-white/80 backdrop-blur-lg border border-white/20 rounded-3xl p-8 h-full shadow-xl">
@@ -108,16 +120,15 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
                 className="text-6xl mb-4 drop-shadow-lg"
                 whileHover={{ 
                   scale: 1.2,
-                  rotate: [0, -5, 5, 0],
+                  rotate: [0, -3, 3, 0],
                   transition: {
-                    scale: { duration: 0.3 },
-                    rotate: { duration: 0.6, repeat: Infinity }
+                    scale: { duration: 0.3, ease: "easeOut" },
+                    rotate: { duration: 0.8, repeat: Infinity, ease: "easeInOut" }
                   }
                 }}
-                animate={{ 
-                  scale: 1, 
-                  rotate: 0,
-                  transition: { duration: 0.15 }
+                transition={{ 
+                  scale: { duration: 0.2, ease: "easeInOut" },
+                  rotate: { duration: 0.15, ease: "easeInOut" }
                 }}
               >
                 {country.flag}
@@ -125,29 +136,49 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
               
               <motion.h3 
                 className="text-2xl font-bold text-slate-800 mb-3 transition-colors duration-200"
-                whileHover={{ color: "#dc2626", transition: { duration: 0.2 } }}
-                animate={{ color: "#1e293b", transition: { duration: 0.1 } }}
+                whileHover={{ 
+                  color: "#dc2626", 
+                  transition: { duration: 0.25, ease: "easeOut" } 
+                }}
+                transition={{ 
+                  color: { duration: 0.15, ease: "easeInOut" }
+                }}
               >
                 {country.name}
               </motion.h3>
               
               <motion.p 
                 className="text-slate-600 mb-6 leading-relaxed"
-                whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                animate={{ y: 0, transition: { duration: 0.1 } }}
+                whileHover={{ 
+                  y: -2, 
+                  transition: { duration: 0.25, ease: "easeOut" } 
+                }}
+                transition={{ 
+                  y: { duration: 0.15, ease: "easeInOut" }
+                }}
               >
                 {country.description}
               </motion.p>
               
               <motion.div 
                 className="flex items-center justify-center text-red-600 group-hover:text-red-700 font-semibold"
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                animate={{ scale: 1, transition: { duration: 0.1 } }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  transition: { duration: 0.25, ease: "easeOut" } 
+                }}
+                transition={{ 
+                  scale: { duration: 0.15, ease: "easeInOut" }
+                }}
               >
                 <span className="mr-2">Select Region</span>
                 <motion.div
-                  whileHover={{ x: 8, transition: { duration: 0.3 } }}
-                  animate={{ x: 0, transition: { duration: 0.15 } }}
+                  whileHover={{ 
+                    x: 8, 
+                    transition: { duration: 0.3, ease: "easeOut" } 
+                  }}
+                  transition={{ 
+                    x: { duration: 0.2, ease: "easeInOut" }
+                  }}
                 >
                   <ArrowRight size={16} />
                 </motion.div>
