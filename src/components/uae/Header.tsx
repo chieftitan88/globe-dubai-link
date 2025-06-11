@@ -43,7 +43,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="w-full">
         {/* Top bar with tagline and language selector */}
-        <div className="bg-red-600 text-white py-2 text-sm">
+        <div className="bg-red-600 text-white py-1 text-sm">
           <div className="w-full px-4 flex items-center justify-between">
             <div className="text-center flex-1">
               {content.tagline}
@@ -59,9 +59,9 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
         
         {/* Main header */}
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between py-2">
+          <div className="flex items-center justify-between py-3">
             <div className="flex items-center">
-              <div className="w-12 h-12 mr-3">
+              <div className="w-10 h-10 mr-3">
                 <img 
                   src="/lovable-uploads/ef106ea1-c939-4e2e-aaea-1fc601d1a00d.png" 
                   alt="Maximum 88 Corporation Logo"
@@ -69,10 +69,10 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
                 />
               </div>
               <div className="ml-1">
-                <h1 className="text-xl font-bold text-red-600 tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>
+                <h1 className="text-lg font-bold text-red-600 tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>
                   MAXIMUM 88
                 </h1>
-                <p className="text-sm text-red-600 font-bold tracking-widest" style={{ fontFamily: 'Arial, sans-serif' }}>
+                <p className="text-xs text-red-600 font-bold tracking-widest" style={{ fontFamily: 'Arial, sans-serif' }}>
                   CORPORATION
                 </p>
               </div>
