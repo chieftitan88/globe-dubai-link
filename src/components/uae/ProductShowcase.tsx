@@ -53,7 +53,7 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
               <img 
                 src="/lovable-uploads/a7b48ae8-852b-4256-b40a-a975cd760f75.png" 
                 alt="VERT Soap - 8in1 All Natural Green Soap"
-                className="w-full h-full object-contain"
+                className="w-44 h-44 object-cover rounded-lg"
               />
             </div>
             <div className="space-y-2">
