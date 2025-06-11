@@ -20,7 +20,8 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       maxdietDescription: "Transform your wellness journey with our premium health supplement designed for optimal nutrition.",
       maxdietSubtitle: "PREMIUM WELLNESS FORMULA",
       maxjuiceTitle: "MAXJUICE",
-      maxjuiceDescription: "Experience the power of natural superfruits with our antioxidant-rich wellness drink."
+      maxjuiceDescription: "Experience the power of natural superfruits with our antioxidant-rich wellness drink.",
+      maxjuiceSubtitle: "SUPER JUICE TO THE MAX"
     },
     ar: {
       pparTitle: "بي بار بلس +",
@@ -33,7 +34,8 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       maxdietDescription: "حول رحلة عافيتك مع مكملنا الصحي المتميز المصمم للتغذية المثلى.",
       maxdietSubtitle: "تركيبة العافية المتميزة",
       maxjuiceTitle: "ماكسي جوس",
-      maxjuiceDescription: "اختبر قوة الفواكه الفائقة الطبيعية مع مشروب العافية الغني بمضادات الأكسدة."
+      maxjuiceDescription: "اختبر قوة الفواكه الفائقة الطبيعية مع مشروب العافية الغني بمضادات الأكسدة.",
+      maxjuiceSubtitle: "عصير سوبر إلى أقصى حد"
     }
   };
 
@@ -51,6 +53,12 @@ const HeroSection = ({ language }: HeroSectionProps) => {
       title: currentContent.maxdietTitle,
       subtitle: currentContent.maxdietSubtitle,
       image: "/lovable-uploads/2823f44f-74c1-4ffc-86db-bcd31160b9fc.png"
+    },
+    {
+      id: 3,
+      title: currentContent.maxjuiceTitle,
+      subtitle: currentContent.maxjuiceSubtitle,
+      image: "/lovable-uploads/80d88420-0ca2-4688-9b21-005bc2f8e47e.png"
     }
   ];
 
@@ -126,7 +134,7 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                           </div>
                         </div>
                       </div>
-                    ) : (
+                    ) : slide.id === 2 ? (
                       // MAXDIET slide with full image background
                       <div className="relative min-h-[600px]">
                         <img 
@@ -150,6 +158,33 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                           <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
                             <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                             Premium Quality Tablets
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      // MAXJUICE slide with full image background
+                      <div className="relative min-h-[600px]">
+                        <img 
+                          src={slide.image}
+                          alt={slide.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/30 via-transparent to-red-800/40"></div>
+                        <div className="absolute top-8 left-8 z-10 text-white">
+                          <div className="inline-flex items-center bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
+                            NEW FLAVOR
+                          </div>
+                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-pink-400 drop-shadow-lg">
+                            {slide.title}
+                          </h2>
+                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md">
+                            {slide.subtitle}
+                          </p>
+                        </div>
+                        <div className="absolute bottom-8 right-8 z-10">
+                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                            <span className="w-2 h-2 bg-pink-400 rounded-full mr-2 animate-pulse"></span>
+                            Acai Berry & Superfruit Blend
                           </div>
                         </div>
                       </div>
