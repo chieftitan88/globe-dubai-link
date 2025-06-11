@@ -40,18 +40,26 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="w-full">
-        {/* Top bar with tagline and language selector */}
-        <div className="bg-red-600 text-white py-1 text-sm">
-          <div className="w-full px-4 flex items-center justify-between">
-            <div className="text-center flex-1">
+        {/* Top bar with tagline and language selector - using 3-column grid */}
+        <div className="bg-red-600 text-white py-2 text-sm">
+          <div className="w-full px-4 grid grid-cols-3 items-center">
+            {/* Left column - empty for balance */}
+            <div></div>
+            
+            {/* Center column - tagline */}
+            <div className="text-center">
               {content.tagline}
             </div>
-            <HeaderMenu 
-              language={language}
-              onLanguageChange={onLanguageChange}
-              onNavigateBack={onNavigateBack}
-              backToSelectionText={content.backToMain}
-            />
+            
+            {/* Right column - language selector */}
+            <div className="flex justify-end">
+              <HeaderMenu 
+                language={language}
+                onLanguageChange={onLanguageChange}
+                onNavigateBack={onNavigateBack}
+                backToSelectionText={content.backToMain}
+              />
+            </div>
           </div>
         </div>
         
@@ -65,9 +73,9 @@ const ShopHeader = ({ language, content, onNavigateBack, onLanguageChange }: Sho
               >
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
-              <div className="w-10 h-10 mr-3">
+              <div className="w-16 h-16 mr-3">
                 <img 
-                  src="/lovable-uploads/ef106ea1-c939-4e2e-aaea-1fc601d1a00d.png" 
+                  src="/lovable-uploads/ba86ee30-04da-4fa6-861a-8b8f1b494c1f.png" 
                   alt="Maximum 88 Corporation Logo"
                   className="w-full h-full object-contain"
                 />
