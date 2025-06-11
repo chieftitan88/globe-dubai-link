@@ -22,18 +22,18 @@ const JoinFamilySection = ({ language }: JoinFamilySectionProps) => {
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 min-h-[500px]">
+        <div className="grid lg:grid-cols-2 min-h-[400px]">
           {/* Left - Team Image */}
           <div className="overflow-hidden h-full">
             <img 
               src="/lovable-uploads/cf523259-dabc-49d4-97a6-6b84a8613287.png" 
               alt="Maximum88 Team"
-              className="w-full h-full object-cover min-h-[500px]"
+              className="w-full h-full object-cover min-h-[400px]"
             />
           </div>
           
           {/* Right - Content */}
-          <div className="bg-red-600 text-white p-12 flex items-center min-h-[500px]">
+          <div className="bg-red-600 text-white p-12 flex items-center min-h-[400px]">
             <div>
               <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: 'serif' }}>
                 {currentContent.title}
