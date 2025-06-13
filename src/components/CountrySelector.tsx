@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { validateExternalURL, createRateLimiter, sanitizeInput } from '@/utils/security';
 
 interface Country {
   id: string;
@@ -44,19 +45,46 @@ interface CountrySelectorProps {
   onSelectCountry: (countryId: string) => void;
 }
 
+// Create rate limiter for country selection (max 10 requests per minute)
+const rateLimiter = createRateLimiter(10, 60000);
+
 const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorProps) => {
   const navigate = useNavigate();
 
   const handleCountryClick = (country: Country) => {
-    onSelectCountry(country.id);
+    // Rate limiting protection
+    const clientId = 'country-selector';
+    if (!rateLimiter(clientId)) {
+      console.warn('Rate limit exceeded for country selection');
+      return;
+    }
+
+    // Sanitize country ID
+    const sanitizedId = sanitizeInput(country.id);
+    onSelectCountry(sanitizedId);
     
     if (country.externalUrl) {
+      // Validate external URL before redirecting
+      const validation = validateExternalURL(country.externalUrl);
+      
+      if (!validation.isValid) {
+        console.error('Invalid external URL:', validation.error);
+        return;
+      }
+      
       setTimeout(() => {
-        window.open(country.externalUrl, '_blank');
+        // Use secure method to open external URL
+        const newWindow = window.open('', '_blank');
+        if (newWindow) {
+          newWindow.location.href = validation.url!;
+          newWindow.opener = null; // Prevent access to parent window
+        }
       }, 500);
     } else if (country.route) {
+      // Validate internal route
+      const sanitizedRoute = sanitizeInput(country.route);
       setTimeout(() => {
-        navigate(country.route!);
+        navigate(sanitizedRoute);
       }, 500);
     }
   };
@@ -73,31 +101,26 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
             scale: 1,
             rotateY: 0,
             transition: {
-              duration: 0.6, 
-              delay: 0.4 + index * 0.1,
+              duration: 0.5, 
+              delay: 0.3 + index * 0.1,
               type: "spring",
-              stiffness: 100
+              stiffness: 120,
+              damping: 20
             }
           }}
           whileHover={{ 
-            scale: 1.08, 
-            y: -15,
-            rotateY: 5,
+            scale: 1.05, 
+            y: -10,
+            rotateY: 3,
             transition: { 
               type: "spring",
-              stiffness: 400,
-              damping: 25,
-              duration: 0.3,
-              ease: "easeOut"
+              stiffness: 300,
+              damping: 20,
+              duration: 0.25
             }
           }}
-          whileTap={{ scale: 0.95 }}
-          transition={{
-            scale: { duration: 0.2, ease: "easeInOut" },
-            y: { duration: 0.25, ease: "easeInOut" },
-            rotateY: { duration: 0.2, ease: "easeInOut" }
-          }}
-          className={`relative overflow-hidden rounded-3xl cursor-pointer group shadow-2xl hover:shadow-3xl transition-all duration-200 ${
+          whileTap={{ scale: 0.98 }}
+          className={`relative overflow-hidden rounded-3xl cursor-pointer group shadow-2xl hover:shadow-3xl transition-all duration-300 ${
             selectedCountry === country.id ? 'ring-4 ring-red-500' : ''
           }`}
           onClick={() => handleCountryClick(country)}
@@ -106,11 +129,8 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
           <motion.div 
             className={`absolute inset-0 bg-gradient-to-br ${country.gradient} opacity-10`}
             whileHover={{ 
-              opacity: 0.25, 
-              transition: { duration: 0.3, ease: "easeOut" } 
-            }}
-            transition={{ 
-              opacity: { duration: 0.2, ease: "easeInOut" }
+              opacity: 0.2, 
+              transition: { duration: 0.25 } 
             }}
           />
           
@@ -119,16 +139,12 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
               <motion.div 
                 className="text-6xl mb-4 drop-shadow-lg"
                 whileHover={{ 
-                  scale: 1.2,
-                  rotate: [0, -3, 3, 0],
+                  scale: 1.15,
+                  rotate: [0, -2, 2, 0],
                   transition: {
-                    scale: { duration: 0.3, ease: "easeOut" },
-                    rotate: { duration: 0.8, repeat: Infinity, ease: "easeInOut" }
+                    scale: { duration: 0.25 },
+                    rotate: { duration: 0.6, repeat: Infinity }
                   }
-                }}
-                transition={{ 
-                  scale: { duration: 0.2, ease: "easeInOut" },
-                  rotate: { duration: 0.15, ease: "easeInOut" }
                 }}
               >
                 {country.flag}
@@ -138,10 +154,7 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
                 className="text-2xl font-bold text-slate-800 mb-3 transition-colors duration-200"
                 whileHover={{ 
                   color: "#dc2626", 
-                  transition: { duration: 0.25, ease: "easeOut" } 
-                }}
-                transition={{ 
-                  color: { duration: 0.15, ease: "easeInOut" }
+                  transition: { duration: 0.2 } 
                 }}
               >
                 {country.name}
@@ -150,11 +163,8 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
               <motion.p 
                 className="text-slate-600 mb-6 leading-relaxed"
                 whileHover={{ 
-                  y: -2, 
-                  transition: { duration: 0.25, ease: "easeOut" } 
-                }}
-                transition={{ 
-                  y: { duration: 0.15, ease: "easeInOut" }
+                  y: -1, 
+                  transition: { duration: 0.2 } 
                 }}
               >
                 {country.description}
@@ -163,21 +173,15 @@ const CountrySelector = ({ selectedCountry, onSelectCountry }: CountrySelectorPr
               <motion.div 
                 className="flex items-center justify-center text-red-600 group-hover:text-red-700 font-semibold"
                 whileHover={{ 
-                  scale: 1.05, 
-                  transition: { duration: 0.25, ease: "easeOut" } 
-                }}
-                transition={{ 
-                  scale: { duration: 0.15, ease: "easeInOut" }
+                  scale: 1.03, 
+                  transition: { duration: 0.2 } 
                 }}
               >
                 <span className="mr-2">Select Region</span>
                 <motion.div
                   whileHover={{ 
-                    x: 8, 
-                    transition: { duration: 0.3, ease: "easeOut" } 
-                  }}
-                  transition={{ 
-                    x: { duration: 0.2, ease: "easeInOut" }
+                    x: 6, 
+                    transition: { duration: 0.25 } 
                   }}
                 >
                   <ArrowRight size={16} />
