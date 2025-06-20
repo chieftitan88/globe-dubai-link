@@ -1,6 +1,6 @@
-
 import { motion } from 'framer-motion';
 import ProductCard from './ProductCard';
+import { useMemo } from 'react';
 
 interface ProductGridProps {
   language: 'en' | 'ar';
@@ -95,7 +95,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
         },
         maxiwhite: {
           title: "ماكسي وايت",
-          description: "مزيج قوي من المكونات لمكملك الغذائي اليومي",
+          description: "مزيج قوي من المكونات لمكمل الغذائي اليومي",
           price: "226 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
@@ -141,7 +141,8 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
 
   const currentContent = content[language];
 
-  const products = [
+  // Memoize products array to prevent unnecessary re-renders
+  const products = useMemo(() => [
     {
       id: 1,
       name: currentContent.products.maxdiet.title,
@@ -242,16 +243,21 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       category: "Beauty",
       imageUrl: "/lovable-uploads/f2b9dcca-b9dc-4c1b-adf6-a8b3031ca206.png"
     }
-  ];
+  ], [currentContent]);
 
-  const filteredProducts = selectedCategory === 'All' || selectedCategory === currentContent.categories.all
-    ? products
-    : products.filter(product => {
-        if (selectedCategory === currentContent.categories.beauty) return product.category === 'Beauty';
-        if (selectedCategory === currentContent.categories.wellness) return product.category === 'Wellness';
-        if (selectedCategory === currentContent.categories.healthBeverages) return product.category === 'Health Beverages';
-        return true;
-      });
+  // Memoize filtered products to prevent unnecessary filtering
+  const filteredProducts = useMemo(() => {
+    if (selectedCategory === 'All' || selectedCategory === currentContent.categories.all) {
+      return products;
+    }
+    
+    return products.filter(product => {
+      if (selectedCategory === currentContent.categories.beauty) return product.category === 'Beauty';
+      if (selectedCategory === currentContent.categories.wellness) return product.category === 'Wellness';
+      if (selectedCategory === currentContent.categories.healthBeverages) return product.category === 'Health Beverages';
+      return true;
+    });
+  }, [products, selectedCategory, currentContent.categories]);
 
   return (
     <div className="flex-1">
@@ -262,6 +268,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
+            className="gpu-accelerated"
           >
             <ProductCard product={product} language={language} />
           </motion.div>

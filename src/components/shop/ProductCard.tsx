@@ -2,6 +2,7 @@
 import { Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 interface Product {
   id: number;
@@ -23,6 +24,8 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, language }: ProductCardProps) => {
   const navigate = useNavigate();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
   
   const content = {
     en: {
@@ -45,17 +48,40 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
     navigate(`/uae/shop/product/${product.id}`);
   };
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoaded(true);
+  };
+
   return (
     <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer" onClick={handleProductClick}>
       <CardContent className="p-6">
         {/* Product Image */}
-        <div className="h-48 rounded-lg mb-4 flex items-center justify-center bg-gray-50">
-          {product.imageUrl ? (
-            <img 
-              src={product.imageUrl}
-              alt={product.name}
-              className={`w-full h-full object-contain rounded-lg ${product.imageStyle || ''}`}
-            />
+        <div className="h-48 rounded-lg mb-4 flex items-center justify-center bg-gray-50 relative overflow-hidden">
+          {product.imageUrl && !imageError ? (
+            <>
+              {/* Loading skeleton */}
+              {!imageLoaded && (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg flex items-center justify-center">
+                  <div className="text-gray-400 text-sm">Loading...</div>
+                </div>
+              )}
+              <img 
+                src={product.imageUrl}
+                alt={product.name}
+                className={`w-full h-full object-contain rounded-lg transition-opacity duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                } ${product.imageStyle || ''}`}
+                loading="lazy"
+                onLoad={handleImageLoad}
+                onError={handleImageError}
+                decoding="async"
+              />
+            </>
           ) : (
             <div className={`w-full h-full ${product.imageStyle || 'bg-gray-100'} rounded-lg flex items-center justify-center`}>
               <div className="text-center text-gray-500">
