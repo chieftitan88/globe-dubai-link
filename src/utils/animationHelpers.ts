@@ -132,7 +132,7 @@ export const backgroundGradientVariants: Variants = {
   }
 };
 
-// Particle animation generator - Simplified for stability
+// Particle animation generator - Fixed easing type
 export const generateParticleAnimation = (index: number, countryId: string) => {
   const theme = COUNTRY_THEMES[countryId as keyof typeof COUNTRY_THEMES];
   const colors = theme?.particles || ['#dc2626', '#b91c1c', '#991b1b'];
@@ -146,7 +146,7 @@ export const generateParticleAnimation = (index: number, countryId: string) => {
     transition: {
       duration: getAnimationDuration(8000 + Math.random() * 4000) / 1000,
       repeat: Infinity,
-      ease: "easeInOut",
+      ease: EASING.easeInOut,
       delay: index * 0.5,
     }
   };
@@ -197,7 +197,7 @@ export const selectionRingVariants: Variants = {
       },
       rotate: {
         duration: getAnimationDuration(1200) / 1000,
-        ease: "easeInOut"
+        ease: EASING.easeInOut
       }
     }
   }
@@ -311,4 +311,4 @@ export const createRateLimiter = (windowMs: number) => {
     lastCall = now;
     return true;
   };
-}; 
+};
