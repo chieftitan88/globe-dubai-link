@@ -20,43 +20,61 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
         maxdiet: {
           title: "MAXDIET",
           description: "Feeling sluggish or weighed down? Unleash Your In",
-          price: "$50.88",
+          price: "224 AED",
           itemNumber: "Item # 107890"
         },
         pparPlus: {
           title: "PPAR Plus +",
           description: "Unlock the ocean's power for optimal health with",
-          price: "$47.88",
+          price: "200 AED",
           itemNumber: "Item # 107890"
         },
         maxivitrite: {
           title: "MAXIVITRITE",
           description: "A powerful ingredient combination for your daily supplement designed",
-          price: "$53.00",
+          price: "53.00 AED",
+          itemNumber: "Item # 107890"
+        },
+        maxiwhite: {
+          title: "MAXIWHITE",
+          description: "Transform your skin with our premium whitening solution",
+          price: "226 AED",
+          itemNumber: "Item # 107890"
+        },
+        maxcee: {
+          title: "MAX-CEE",
+          description: "Boost your immune system with our vitamin C supplement",
+          price: "189 AED",
+          itemNumber: "Item # 107890"
+        },
+        maxigold: {
+          title: "MAXIGOLD",
+          description: "Premium gold-infused wellness supplement",
+          price: "79 AED",
           itemNumber: "Item # 107890"
         },
         vertSoap: {
           title: "VERT SOAP",
           description: "Your 8-in-1 All-Natural Green Oasis for Glowing S",
-          price: "$10.00",
+          price: "34 AED",
           itemNumber: "Item # 107890"
         },
         rougeSoap: {
           title: "ROUGE SOAP",
           description: "Embrace a visibly brighter and healthier complexi",
-          price: "$10.00",
+          price: "34 AED",
           itemNumber: "Item # 107890"
         },
         kogenSoap: {
           title: "KOGEN SOAP",
           description: "Unveil your most radiant skin with Kogen Soap, th",
-          price: "$10.00",
+          price: "34 AED",
           itemNumber: "Item # 107890"
         },
         glutagenSoap: {
           title: "GLUTAGEN SOAP",
           description: "Reveal a luminous, even-toned you with M88 Glutag",
-          price: "$10.00",
+          price: "34 AED",
           itemNumber: "Item # 107890"
         }
       }
@@ -72,43 +90,61 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
         maxdiet: {
           title: "ماكس دايت",
           description: "هل تشعر بالخمول أو الثقل؟ أطلق حيويتك الداخلية",
-          price: "$50.88",
+          price: "224 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
         pparPlus: {
           title: "بي بار بلس +",
           description: "اكتشف قوة المحيط للصحة المثلى مع",
-          price: "$47.88",
+          price: "200 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
         maxivitrite: {
           title: "ماكسي فيتريت",
           description: "مزيج قوي من المكونات لمكملك الغذائي اليومي",
-          price: "$53.00",
+          price: "53.00 درهم",
+          itemNumber: "رقم المنتج # 107890"
+        },
+        maxiwhite: {
+          title: "ماكسي وايت",
+          description: "حول بشرتك مع حلول التبييض المتميزة",
+          price: "226 درهم",
+          itemNumber: "رقم المنتج # 107890"
+        },
+        maxcee: {
+          title: "ماكس سي",
+          description: "عزز جهازك المناعي مع مكمل فيتامين سي",
+          price: "189 درهم",
+          itemNumber: "رقم المنتج # 107890"
+        },
+        maxigold: {
+          title: "ماكسي جولد",
+          description: "مكمل عافية متميز مدعم بالذهب",
+          price: "79 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
         vertSoap: {
           title: "صابون فيرت",
           description: "واحتك الخضراء الطبيعية 8 في 1 للبشرة المتوهجة",
-          price: "$10.00",
+          price: "34 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
         rougeSoap: {
           title: "صابون روج",
           description: "احتضن بشرة أكثر إشراقاً وصحة بشكل واضح",
-          price: "$10.00",
+          price: "34 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
         kogenSoap: {
           title: "صابون كوجين",
           description: "اكشف عن بشرتك الأكثر إشراقاً مع صابون كوجين",
-          price: "$10.00",
+          price: "34 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
         glutagenSoap: {
           title: "صابون جلوتاجين",
           description: "اكشف عن إطلالة مضيئة ومتجانسة مع جلوتاجين",
-          price: "$10.00",
+          price: "34 درهم",
           itemNumber: "رقم المنتج # 107890"
         }
       }
@@ -127,7 +163,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Wellness",
-      imageStyle: "bg-gradient-to-br from-blue-100 to-purple-100"
+      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
     },
     {
       id: 2,
@@ -138,7 +174,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Health Beverages",
-      imageStyle: "bg-gradient-to-br from-red-100 to-orange-100"
+      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
     },
     {
       id: 3,
@@ -149,10 +185,43 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Wellness",
-      imageStyle: "bg-gradient-to-br from-pink-100 to-red-100"
+      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
     },
     {
       id: 4,
+      name: currentContent.products.maxiwhite.title,
+      description: currentContent.products.maxiwhite.description,
+      price: currentContent.products.maxiwhite.price,
+      itemNumber: currentContent.products.maxiwhite.itemNumber,
+      rating: 5,
+      reviews: 102,
+      category: "Beauty",
+      imageUrl: "/lovable-uploads/1e8e0634-bb91-4b9c-a504-bff691517971.png"
+    },
+    {
+      id: 5,
+      name: currentContent.products.maxcee.title,
+      description: currentContent.products.maxcee.description,
+      price: currentContent.products.maxcee.price,
+      itemNumber: currentContent.products.maxcee.itemNumber,
+      rating: 5,
+      reviews: 102,
+      category: "Wellness",
+      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+    },
+    {
+      id: 6,
+      name: currentContent.products.maxigold.title,
+      description: currentContent.products.maxigold.description,
+      price: currentContent.products.maxigold.price,
+      itemNumber: currentContent.products.maxigold.itemNumber,
+      rating: 5,
+      reviews: 102,
+      category: "Wellness",
+      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+    },
+    {
+      id: 7,
       name: currentContent.products.vertSoap.title,
       description: currentContent.products.vertSoap.description,
       price: currentContent.products.vertSoap.price,
@@ -160,10 +229,10 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Beauty",
-      imageStyle: "bg-gradient-to-br from-green-100 to-emerald-100"
+      imageUrl: "/lovable-uploads/0da2312e-3045-43b6-aa43-958b2d3ae9f0.png"
     },
     {
-      id: 5,
+      id: 8,
       name: currentContent.products.rougeSoap.title,
       description: currentContent.products.rougeSoap.description,
       price: currentContent.products.rougeSoap.price,
@@ -171,10 +240,10 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Beauty",
-      imageStyle: "bg-gradient-to-br from-red-100 to-pink-100"
+      imageUrl: "/lovable-uploads/055fc351-856e-4ad5-986d-6d7be51a6327.png"
     },
     {
-      id: 6,
+      id: 9,
       name: currentContent.products.kogenSoap.title,
       description: currentContent.products.kogenSoap.description,
       price: currentContent.products.kogenSoap.price,
@@ -182,10 +251,10 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Beauty",
-      imageStyle: "bg-gradient-to-br from-orange-100 to-yellow-100"
+      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
     },
     {
-      id: 7,
+      id: 10,
       name: currentContent.products.glutagenSoap.title,
       description: currentContent.products.glutagenSoap.description,
       price: currentContent.products.glutagenSoap.price,
@@ -193,7 +262,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Beauty",
-      imageStyle: "bg-gradient-to-br from-red-200 to-white"
+      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
     }
   ];
 

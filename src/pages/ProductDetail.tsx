@@ -51,7 +51,7 @@ const ProductDetail = () => {
   const products = {
     1: {
       name: { en: "MAXDIET", ar: "ماكس دايت" },
-      price: "$50.88",
+      price: "224 AED",
       itemNumber: "Item # 107890",
       rating: 5,
       reviews: 102,

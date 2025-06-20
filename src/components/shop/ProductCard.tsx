@@ -12,7 +12,8 @@ interface Product {
   rating: number;
   reviews: number;
   category: string;
-  imageStyle: string;
+  imageUrl?: string;
+  imageStyle?: string;
 }
 
 interface ProductCardProps {
@@ -47,13 +48,23 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
   return (
     <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer" onClick={handleProductClick}>
       <CardContent className="p-6">
-        {/* Product Image Placeholder */}
-        <div className={`h-48 ${product.imageStyle} rounded-lg mb-4 flex items-center justify-center`}>
-          <div className="text-center text-gray-500">
-            <div className="text-4xl mb-2">📦</div>
-            <p className="text-sm">{product.name}</p>
-            <p className="text-xs opacity-70">Image Placeholder</p>
-          </div>
+        {/* Product Image */}
+        <div className="h-48 rounded-lg mb-4 flex items-center justify-center bg-gray-50">
+          {product.imageUrl ? (
+            <img 
+              src={product.imageUrl}
+              alt={product.name}
+              className="w-full h-full object-contain rounded-lg"
+            />
+          ) : (
+            <div className={`w-full h-full ${product.imageStyle || 'bg-gray-100'} rounded-lg flex items-center justify-center`}>
+              <div className="text-center text-gray-500">
+                <div className="text-4xl mb-2">📦</div>
+                <p className="text-sm">{product.name}</p>
+                <p className="text-xs opacity-70">Image Placeholder</p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Product Info */}
