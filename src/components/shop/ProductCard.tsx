@@ -54,7 +54,7 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
             <img 
               src={product.imageUrl}
               alt={product.name}
-              className="w-full h-full object-contain rounded-lg"
+              className={`w-full h-full object-contain rounded-lg ${product.imageStyle || ''}`}
             />
           ) : (
             <div className={`w-full h-full ${product.imageStyle || 'bg-gray-100'} rounded-lg flex items-center justify-center`}>

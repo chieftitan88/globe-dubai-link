@@ -184,7 +184,8 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Wellness",
-      imageUrl: "/lovable-uploads/dac645cc-d441-4770-aec5-cd1b64f71e89.png"
+      imageUrl: "/lovable-uploads/dac645cc-d441-4770-aec5-cd1b64f71e89.png",
+      imageStyle: "object-contain scale-125"
     },
     {
       id: 5,
@@ -228,7 +229,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Beauty",
-      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+      imageUrl: "/lovable-uploads/4b5cb476-7e5d-4197-a3a1-2c3f7a7870b5.png"
     },
     {
       id: 9,
@@ -239,7 +240,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Beauty",
-      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+      imageUrl: "/lovable-uploads/f2b9dcca-b9dc-4c1b-adf6-a8b3031ca206.png"
     }
   ];
 
