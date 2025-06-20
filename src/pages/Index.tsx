@@ -66,13 +66,11 @@ const Index = () => {
           duration: 12 + Math.random() * 8,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: Math.random() * 2, // Random small delay instead of sequential
+          delay: Math.random() * 2,
         }}
       />
     ));
   };
-
-
 
   // Animated grid pattern
   const renderAnimatedGrid = () => {
@@ -98,7 +96,7 @@ const Index = () => {
           duration: 20,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 0, // Start immediately
+          delay: 0,
         }}
       />
     );
@@ -231,7 +229,7 @@ const Index = () => {
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 0.3, // Minimal delay for sequence
+            delay: 0.3,
           }}
         />
 
@@ -254,7 +252,7 @@ const Index = () => {
             duration: 14,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 0.6, // Minimal delay for sequence
+            delay: 0.6,
           }}
         />
       </>
@@ -355,9 +353,9 @@ const Index = () => {
             {selectedCountry === 'philippines' && (
               <motion.div
                 className="absolute inset-0"
-                initial={{ opacity: 1 }} // Start visible immediately
+                initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0 }} // No delay
+                transition={{ delay: 0 }}
               >
                 {Array.from({ length: 8 }, (_, i) => (
                   <motion.div
@@ -375,7 +373,7 @@ const Index = () => {
                     transition={{
                       duration: 4 + Math.random() * 2,
                       repeat: Infinity,
-                      delay: Math.random() * 0.5, // Minimal random delay
+                      delay: Math.random() * 0.5,
                     }}
                   />
                 ))}
@@ -392,7 +390,7 @@ const Index = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-                <motion.div
+        <motion.div
           className="flex flex-col items-center space-y-6 mb-8"
           whileHover={{ scale: 1.01 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -404,7 +402,7 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            {/* Logo */}
+            {/* Logo - Updated with new logo and increased size */}
             <motion.div
               className="relative flex-shrink-0"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -416,10 +414,10 @@ const Index = () => {
                 transition: { duration: 0.6, ease: "easeInOut" }
               }}
             >
-              <div className="w-20 h-20 md:w-28 md:h-28 relative">
-                {/* Use uploaded logo */}
+              <div className="w-32 h-32 md:w-40 md:h-40 relative">
+                {/* Use new uploaded logo with increased size */}
                 <img 
-                  src="/lovable-uploads/0527690b-04bb-403d-84f3-225576571139.png"
+                  src="/lovable-uploads/22d79fda-9e18-434c-8e5e-e578d0e1c3eb.png"
                   alt="Maximum 88 Corporation Logo"
                   className="w-full h-full object-contain shadow-2xl"
                   style={{
@@ -511,8 +509,6 @@ const Index = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-
-
         </motion.div>
 
         {/* Subtitle */}
