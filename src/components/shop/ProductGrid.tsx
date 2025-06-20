@@ -29,15 +29,9 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
           price: "200 AED",
           itemNumber: "Item # 107890"
         },
-        maxivitrite: {
-          title: "MAXIVITRITE",
-          description: "A powerful ingredient combination for your daily supplement designed",
-          price: "53.00 AED",
-          itemNumber: "Item # 107890"
-        },
         maxiwhite: {
           title: "MAXIWHITE",
-          description: "Transform your skin with our premium whitening solution",
+          description: "A powerful ingredient combination for your daily supplement designed",
           price: "226 AED",
           itemNumber: "Item # 107890"
         },
@@ -99,15 +93,9 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
           price: "200 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
-        maxivitrite: {
-          title: "ماكسي فيتريت",
-          description: "مزيج قوي من المكونات لمكملك الغذائي اليومي",
-          price: "53.00 درهم",
-          itemNumber: "رقم المنتج # 107890"
-        },
         maxiwhite: {
           title: "ماكسي وايت",
-          description: "حول بشرتك مع حلول التبييض المتميزة",
+          description: "مزيج قوي من المكونات لمكملك الغذائي اليومي",
           price: "226 درهم",
           itemNumber: "رقم المنتج # 107890"
         },
@@ -163,7 +151,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Wellness",
-      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+      imageUrl: "/lovable-uploads/5b0acd46-151f-4e8c-b71b-a57f95677705.png"
     },
     {
       id: 2,
@@ -174,21 +162,10 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Health Beverages",
-      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+      imageUrl: "/lovable-uploads/44e1bbaf-4cf2-47e4-87fc-634ad3b30f35.png"
     },
     {
       id: 3,
-      name: currentContent.products.maxivitrite.title,
-      description: currentContent.products.maxivitrite.description,
-      price: currentContent.products.maxivitrite.price,
-      itemNumber: currentContent.products.maxivitrite.itemNumber,
-      rating: 5,
-      reviews: 102,
-      category: "Wellness",
-      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
-    },
-    {
-      id: 4,
       name: currentContent.products.maxiwhite.title,
       description: currentContent.products.maxiwhite.description,
       price: currentContent.products.maxiwhite.price,
@@ -196,10 +173,10 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Beauty",
-      imageUrl: "/lovable-uploads/1e8e0634-bb91-4b9c-a504-bff691517971.png"
+      imageUrl: "/lovable-uploads/2517ea63-4483-48df-b1ec-367c4d474107.png"
     },
     {
-      id: 5,
+      id: 4,
       name: currentContent.products.maxcee.title,
       description: currentContent.products.maxcee.description,
       price: currentContent.products.maxcee.price,
@@ -207,10 +184,10 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Wellness",
-      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+      imageUrl: "/lovable-uploads/dac645cc-d441-4770-aec5-cd1b64f71e89.png"
     },
     {
-      id: 6,
+      id: 5,
       name: currentContent.products.maxigold.title,
       description: currentContent.products.maxigold.description,
       price: currentContent.products.maxigold.price,
@@ -218,10 +195,10 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       rating: 5,
       reviews: 102,
       category: "Wellness",
-      imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
+      imageUrl: "/lovable-uploads/b70cc08e-2dc8-4e4d-bf24-910cd4f18700.png"
     },
     {
-      id: 7,
+      id: 6,
       name: currentContent.products.vertSoap.title,
       description: currentContent.products.vertSoap.description,
       price: currentContent.products.vertSoap.price,
@@ -232,7 +209,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       imageUrl: "/lovable-uploads/0da2312e-3045-43b6-aa43-958b2d3ae9f0.png"
     },
     {
-      id: 8,
+      id: 7,
       name: currentContent.products.rougeSoap.title,
       description: currentContent.products.rougeSoap.description,
       price: currentContent.products.rougeSoap.price,
@@ -243,7 +220,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       imageUrl: "/lovable-uploads/055fc351-856e-4ad5-986d-6d7be51a6327.png"
     },
     {
-      id: 9,
+      id: 8,
       name: currentContent.products.kogenSoap.title,
       description: currentContent.products.kogenSoap.description,
       price: currentContent.products.kogenSoap.price,
@@ -254,7 +231,7 @@ const ProductGrid = ({ language, selectedCategory }: ProductGridProps) => {
       imageUrl: "/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png"
     },
     {
-      id: 10,
+      id: 9,
       name: currentContent.products.glutagenSoap.title,
       description: currentContent.products.glutagenSoap.description,
       price: currentContent.products.glutagenSoap.price,

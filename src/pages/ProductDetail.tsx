@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, Plus, Minus, Heart, Share2 } from 'lucide-react';
@@ -76,6 +77,35 @@ const ProductDetail = () => {
         "bg-gradient-to-br from-blue-100 to-purple-100",
         "bg-gradient-to-br from-purple-100 to-blue-200",
         "bg-gradient-to-br from-blue-200 to-purple-200"
+      ]
+    },
+    3: {
+      name: { en: "MAXIWHITE", ar: "ماكسي وايت" },
+      price: "226 AED",
+      itemNumber: "Item # 107890",
+      rating: 5,
+      reviews: 102,
+      inStock: true,
+      description: {
+        en: "Transform your skin with our premium MAXIWHITE - a powerful ingredient combination for your daily supplement designed to support healthy, radiant skin.",
+        ar: "حول بشرتك مع ماكسي وايت المتميز - مزيج قوي من المكونات لمكملك الغذائي اليومي المصمم لدعم البشرة الصحية والمتألقة."
+      },
+      benefits: {
+        en: ["Supports skin health", "Promotes radiant complexion", "Antioxidant properties", "Daily wellness support"],
+        ar: ["يدعم صحة البشرة", "يعزز البشرة المتألقة", "خصائص مضادة للأكسدة", "دعم العافية اليومية"]
+      },
+      ingredients: {
+        en: "L-Glutathione, Collagen, ALA, CoQ10, Vitamin C, Grapeseed & Rose Hips",
+        ar: "إل-جلوتاثيون، كولاجين، أ إل إيه، كو كيو 10، فيتامين سي، بذور العنب ووردة البرية"
+      },
+      howToUse: {
+        en: "Take 1 capsule daily with meals or as directed by healthcare professional.",
+        ar: "تناول كبسولة واحدة يومياً مع الوجبات أو حسب توجيهات أخصائي الرعاية الصحية."
+      },
+      images: [
+        "bg-gradient-to-br from-pink-100 to-purple-100",
+        "bg-gradient-to-br from-purple-100 to-pink-200",
+        "bg-gradient-to-br from-pink-200 to-purple-200"
       ]
     }
   };
