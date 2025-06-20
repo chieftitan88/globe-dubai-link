@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import enhanced animations */
+@import './styles/animations.css';
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
 @layer base {
@@ -99,5 +102,44 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Performance optimizations for smoother animations */
+@layer utilities {
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  
+  .smooth-animation {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .optimize-rendering {
+    contain: layout style paint;
+  }
+
+  /* Country card specific optimizations */
+  .country-card-optimized {
+    /* Force hardware acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    /* Prevent layout shifts */
+    contain: layout style;
+    /* Optimize for frequent changes */
+    will-change: transform, box-shadow;
+    /* Ensure smooth rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .country-card-content {
+    /* Optimize text rendering */
+    text-rendering: optimizeSpeed;
+    /* Prevent subpixel rendering issues */
+    transform: translateZ(0);
   }
 }

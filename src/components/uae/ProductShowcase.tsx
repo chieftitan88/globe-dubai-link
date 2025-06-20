@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 
 interface ProductShowcaseProps {
@@ -83,24 +82,24 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           {/* VERT SOAP */}
           <div 
             ref={(el) => cardRefs.current[0] = el}
-            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out ${
+            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out hover:shadow-2xl hover:scale-105 hover:-translate-y-2 cursor-pointer group ${
               visibleCards[0] 
                 ? 'opacity-100 transform translate-y-0' 
                 : 'opacity-0 transform translate-y-8'
             }`}
             style={{ transitionDelay: '0ms' }}
           >
-            <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
+            <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center overflow-hidden rounded-lg">
               <img 
                 src="/lovable-uploads/a7b48ae8-852b-4256-b40a-a975cd760f75.png" 
                 alt="VERT Soap - 8in1 All Natural Green Soap"
-                className="w-44 h-44 object-cover rounded-lg"
+                className="w-44 h-44 object-cover rounded-lg transition-transform duration-500 ease-out group-hover:scale-110"
               />
             </div>
             <div className="space-y-2">
-              <h3 className="text-lg font-bold text-gray-900">{currentContent.vertTitle}</h3>
-              <p className="text-sm text-gray-600">{currentContent.vertDescription}</p>
-              <button className="text-red-600 font-medium hover:text-red-700 text-sm">
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300">{currentContent.vertTitle}</h3>
+              <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{currentContent.vertDescription}</p>
+              <button className="text-red-600 font-medium hover:text-red-700 text-sm transform group-hover:scale-105 transition-all duration-300">
                 {currentContent.readMore}
               </button>
             </div>
@@ -109,24 +108,24 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           {/* MAXDIET */}
           <div 
             ref={(el) => cardRefs.current[1] = el}
-            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out ${
+            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out hover:shadow-2xl hover:scale-105 hover:-translate-y-2 cursor-pointer group ${
               visibleCards[1] 
                 ? 'opacity-100 transform translate-y-0' 
                 : 'opacity-0 transform translate-y-8'
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
+            <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center overflow-hidden rounded-lg">
               <img 
                 src="/lovable-uploads/c4a24758-ec4d-46d2-a3e6-adacb3bb02de.png" 
                 alt="MAXDIET - Premium Diet Supplement"
-                className="w-44 h-44 object-cover rounded-lg"
+                className="w-44 h-44 object-cover rounded-lg transition-transform duration-500 ease-out group-hover:scale-110"
               />
             </div>
             <div className="space-y-2">
-              <h3 className="text-lg font-bold text-gray-900">{currentContent.maxdietTitle}</h3>
-              <p className="text-sm text-gray-600">{currentContent.maxdietDescription}</p>
-              <button className="text-red-600 font-medium hover:text-red-700 text-sm">
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300">{currentContent.maxdietTitle}</h3>
+              <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{currentContent.maxdietDescription}</p>
+              <button className="text-red-600 font-medium hover:text-red-700 text-sm transform group-hover:scale-105 transition-all duration-300">
                 {currentContent.readMore}
               </button>
             </div>
@@ -135,24 +134,24 @@ const ProductShowcase = ({ language }: ProductShowcaseProps) => {
           {/* MAXIWHITE */}
           <div 
             ref={(el) => cardRefs.current[2] = el}
-            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out ${
+            className={`bg-white rounded-lg shadow-lg p-6 text-center transition-all duration-700 ease-out hover:shadow-2xl hover:scale-105 hover:-translate-y-2 cursor-pointer group ${
               visibleCards[2] 
                 ? 'opacity-100 transform translate-y-0' 
                 : 'opacity-0 transform translate-y-8'
             }`}
             style={{ transitionDelay: '400ms' }}
           >
-            <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
+            <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center overflow-hidden rounded-lg">
               <img 
                 src="/lovable-uploads/1e8e0634-bb91-4b9c-a504-bff691517971.png" 
                 alt="MAXIWHITE - Premium Whitening Solution"
-                className="w-44 h-44 object-cover rounded-lg"
+                className="w-44 h-44 object-cover rounded-lg transition-transform duration-500 ease-out group-hover:scale-110"
               />
             </div>
             <div className="space-y-2">
-              <h3 className="text-lg font-bold text-gray-900">{currentContent.maxiwhiteTitle}</h3>
-              <p className="text-sm text-gray-600">{currentContent.maxiwhiteDescription}</p>
-              <button className="text-red-600 font-medium hover:text-red-700 text-sm">
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300">{currentContent.maxiwhiteTitle}</h3>
+              <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{currentContent.maxiwhiteDescription}</p>
+              <button className="text-red-600 font-medium hover:text-red-700 text-sm transform group-hover:scale-105 transition-all duration-300">
                 {currentContent.readMore}
               </button>
             </div>

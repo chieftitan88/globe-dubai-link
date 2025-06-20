@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -106,29 +105,29 @@ const HeroSection = ({ language }: HeroSectionProps) => {
             <CarouselContent>
               {leftSlides.map((slide) => (
                 <CarouselItem key={slide.id}>
-                  <div className="relative min-h-[600px] overflow-hidden">
+                  <div className="relative min-h-[600px] overflow-hidden group cursor-pointer">
                     {slide.id === 1 ? (
                       // PPAR slide with full image background
                       <div className="relative min-h-[600px]">
                         <img 
                           src={slide.image}
                           alt={slide.title}
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60"></div>
-                        <div className="absolute top-8 left-8 z-10 text-white">
-                          <div className="inline-flex items-center bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60 group-hover:from-black/30 group-hover:to-black/50 transition-all duration-500"></div>
+                        <div className="absolute top-8 left-8 z-10 text-white transition-transform duration-500 group-hover:scale-105">
+                          <div className="inline-flex items-center bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse group-hover:bg-orange-400 transition-colors duration-300">
                             PREMIUM
                           </div>
-                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-red-400 drop-shadow-lg">
+                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-red-400 drop-shadow-lg group-hover:from-orange-200 group-hover:to-red-300 transition-all duration-300">
                             {slide.title}
                           </h2>
-                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md">
+                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md group-hover:text-white transition-colors duration-300">
                             {slide.subtitle}
                           </p>
                         </div>
-                        <div className="absolute bottom-8 right-8 z-10">
-                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                        <div className="absolute bottom-8 right-8 z-10 transition-transform duration-500 group-hover:scale-105">
+                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white group-hover:bg-white/20 transition-all duration-300">
                             <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
                             Ocean's Natural Formula
                           </div>
@@ -140,22 +139,22 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                         <img 
                           src={slide.image}
                           alt={slide.title}
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
-                        <div className="absolute top-8 left-8 z-10 text-white">
-                          <div className="inline-flex items-center bg-yellow-400 text-purple-800 text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 group-hover:from-black/50 group-hover:to-black/20 transition-all duration-500"></div>
+                        <div className="absolute top-8 left-8 z-10 text-white transition-transform duration-500 group-hover:scale-105">
+                          <div className="inline-flex items-center bg-yellow-400 text-purple-800 text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse group-hover:bg-yellow-300 transition-colors duration-300">
                             NEW
                           </div>
-                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400 drop-shadow-lg">
+                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400 drop-shadow-lg group-hover:from-yellow-200 group-hover:to-orange-300 transition-all duration-300">
                             {slide.title}
                           </h2>
-                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md">
+                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md group-hover:text-white transition-colors duration-300">
                             {slide.subtitle}
                           </p>
                         </div>
-                        <div className="absolute bottom-8 right-8 z-10">
-                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                        <div className="absolute bottom-8 right-8 z-10 transition-transform duration-500 group-hover:scale-105">
+                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white group-hover:bg-white/20 transition-all duration-300">
                             <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                             Premium Quality Tablets
                           </div>
@@ -167,22 +166,22 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                         <img 
                           src={slide.image}
                           alt={slide.title}
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/30 via-transparent to-red-800/40"></div>
-                        <div className="absolute top-8 left-8 z-10 text-white">
-                          <div className="inline-flex items-center bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
+                        <div className="absolute inset-0 bg-gradient-to-br from-red-500/30 via-transparent to-red-800/40 group-hover:from-red-400/40 group-hover:to-red-700/50 transition-all duration-500"></div>
+                        <div className="absolute top-8 left-8 z-10 text-white transition-transform duration-500 group-hover:scale-105">
+                          <div className="inline-flex items-center bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse group-hover:bg-red-400 transition-colors duration-300">
                             NEW FLAVOR
                           </div>
-                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-pink-400 drop-shadow-lg">
+                          <h2 className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-pink-400 drop-shadow-lg group-hover:from-red-200 group-hover:to-pink-300 transition-all duration-300">
                             {slide.title}
                           </h2>
-                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md">
+                          <p className="text-xl font-medium text-white/90 tracking-wide drop-shadow-md group-hover:text-white transition-colors duration-300">
                             {slide.subtitle}
                           </p>
                         </div>
-                        <div className="absolute bottom-8 right-8 z-10">
-                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white">
+                        <div className="absolute bottom-8 right-8 z-10 transition-transform duration-500 group-hover:scale-105">
+                          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white group-hover:bg-white/20 transition-all duration-300">
                             <span className="w-2 h-2 bg-pink-400 rounded-full mr-2 animate-pulse"></span>
                             Acai Berry & Superfruit Blend
                           </div>
@@ -193,32 +192,32 @@ const HeroSection = ({ language }: HeroSectionProps) => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4 bg-white/20 border-white/30 text-white hover:bg-white/30" />
-            <CarouselNext className="right-4 bg-white/20 border-white/30 text-white hover:bg-white/30" />
+            <CarouselPrevious className="left-4 bg-white/20 border-white/30 text-white hover:bg-white/30 hover:scale-110 transition-all duration-300" />
+            <CarouselNext className="right-4 bg-white/20 border-white/30 text-white hover:bg-white/30 hover:scale-110 transition-all duration-300" />
           </Carousel>
         </div>
 
         {/* Right - Static Sections */}
         <div className="grid grid-rows-2">
           {rightSections.map((section, index) => (
-            <div key={index} className={`${section.bgColor} p-8 flex items-center ${section.textColor} relative overflow-hidden`}>
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-4 right-4 w-32 h-32 bg-white rounded-full"></div>
-                <div className="absolute bottom-4 left-4 w-16 h-16 bg-white rounded-full"></div>
+            <div key={index} className={`${section.bgColor} p-8 flex items-center ${section.textColor} relative overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-500`}>
+              <div className="absolute inset-0 opacity-10 transition-opacity duration-500 group-hover:opacity-20">
+                <div className="absolute top-4 right-4 w-32 h-32 bg-white rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+                <div className="absolute bottom-4 left-4 w-16 h-16 bg-white rounded-full transition-transform duration-500 group-hover:scale-110"></div>
               </div>
-              <div className="flex items-center justify-between w-full relative z-10">
+              <div className="flex items-center justify-between w-full relative z-10 transition-transform duration-500 group-hover:scale-105">
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-3">{section.title}</h3>
-                  <p className={`text-sm leading-relaxed ${section.descColor || 'text-gray-700'}`}>
+                  <h3 className="text-3xl font-bold mb-3 transition-all duration-300 group-hover:text-red-600">{section.title}</h3>
+                  <p className={`text-sm leading-relaxed ${section.descColor || 'text-gray-700'} transition-all duration-300 group-hover:text-gray-800`}>
                     {section.description}
                   </p>
                 </div>
                 <div className="ml-8">
-                  <div className="w-48 h-48 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-48 h-48 rounded-xl flex items-center justify-center shadow-lg overflow-hidden transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105">
                     <img 
                       src={section.image}
                       alt={section.title}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain transition-transform duration-700 ease-out group-hover:scale-110"
                     />
                   </div>
                 </div>

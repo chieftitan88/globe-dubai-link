@@ -1,0 +1,329 @@
+/* Phase 1 Enhanced Animations */
+
+/* Cultural Color Variables */
+:root {
+  /* UAE Theme */
+  --uae-primary: #C9A961;
+  --uae-secondary: #8B4513;
+  --uae-accent: #FF6B35;
+  --uae-gradient: linear-gradient(135deg, var(--uae-primary), var(--uae-secondary));
+  
+  /* Philippines Theme */
+  --philippines-primary: #0074D9;
+  --philippines-secondary: #2ECC40;
+  --philippines-accent: #FFD700;
+  --philippines-gradient: linear-gradient(135deg, var(--philippines-primary), var(--philippines-secondary));
+  
+  /* USA Theme */
+  --usa-primary: #B22234;
+  --usa-secondary: #3C3B6E;
+  --usa-accent: #FFFFFF;
+  --usa-gradient: linear-gradient(135deg, var(--usa-primary), var(--usa-secondary));
+  
+  /* Animation Variables */
+  --particle-opacity: 0.6;
+  --glow-intensity: 0.3;
+  --shadow-depth: rgba(0, 0, 0, 0.15);
+  --card-border-radius: 16px;
+  --enhanced-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 15px 20px -8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Country Card Styles */
+.country-card-enhanced {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--card-border-radius);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.country-card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.country-card-enhanced:hover::before {
+  transform: translateX(100%);
+}
+
+/* Cultural Background Overlays */
+.country-card-enhanced[data-country="uae"] .card-background {
+  background: var(--uae-gradient);
+}
+
+.country-card-enhanced[data-country="philippines"] .card-background {
+  background: var(--philippines-gradient);
+}
+
+.country-card-enhanced[data-country="usa"] .card-background {
+  background: var(--usa-gradient);
+}
+
+/* Enhanced Flag Animations */
+.flag-enhanced {
+  display: inline-block;
+  transform-origin: center;
+  will-change: transform;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flag-enhanced:hover {
+  animation: flagWave 0.6s ease-in-out 2;
+}
+
+@keyframes flagWave {
+  0%, 100% { transform: scale(1.1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-2deg); }
+  75% { transform: scale(1.1) rotate(2deg); }
+}
+
+/* Breathing Animation for Cards */
+.card-breathing {
+  animation: cardBreathe 4s ease-in-out infinite;
+}
+
+@keyframes cardBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.005); }
+}
+
+/* Enhanced Particle System */
+.particle-enhanced {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  filter: blur(0.5px);
+}
+
+.particle-enhanced.uae {
+  background: radial-gradient(circle, var(--uae-primary), var(--uae-secondary));
+  box-shadow: 0 0 10px var(--uae-primary);
+}
+
+.particle-enhanced.philippines {
+  background: radial-gradient(circle, var(--philippines-primary), var(--philippines-secondary));
+  box-shadow: 0 0 10px var(--philippines-primary);
+}
+
+.particle-enhanced.usa {
+  background: radial-gradient(circle, var(--usa-primary), var(--usa-secondary));
+  box-shadow: 0 0 10px var(--usa-primary);
+}
+
+/* Anticipatory Hover Effects */
+.card-anticipation {
+  transition: all 0.2s ease-out;
+}
+
+.card-anticipation.near {
+  transform: scale(1.01);
+  box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Selection Ring */
+.selection-ring-enhanced {
+  position: absolute;
+  inset: -4px;
+  border: 4px solid;
+  border-radius: calc(var(--card-border-radius) + 4px);
+  pointer-events: none;
+  background: linear-gradient(45deg, transparent, rgba(220, 38, 38, 0.3), transparent);
+  animation: selectionPulse 2s ease-in-out infinite;
+}
+
+@keyframes selectionPulse {
+  0%, 100% { 
+    border-color: rgba(220, 38, 38, 0.8);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+  }
+  50% { 
+    border-color: rgba(220, 38, 38, 1);
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+  }
+}
+
+/* Cultural Geometric Patterns */
+.geometric-pattern {
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.country-card-enhanced:hover .geometric-pattern {
+  opacity: 0.2;
+}
+
+.geometric-pattern.uae {
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--uae-accent) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, var(--uae-primary) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.geometric-pattern.philippines {
+  background-image: 
+    linear-gradient(45deg, var(--philippines-primary) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--philippines-secondary) 25%, transparent 25%);
+  background-size: 15px 15px;
+}
+
+.geometric-pattern.usa {
+  background-image: 
+    repeating-linear-gradient(0deg, var(--usa-primary), var(--usa-primary) 2px, transparent 2px, transparent 10px),
+    repeating-linear-gradient(90deg, var(--usa-secondary), var(--usa-secondary) 2px, transparent 2px, transparent 10px);
+}
+
+/* Enhanced Typography */
+.title-enhanced {
+  background: linear-gradient(135deg, #1f2937, #dc2626, #991b1b);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleShimmer 3s ease-in-out infinite;
+  will-change: background-position;
+}
+
+@keyframes titleShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Loading State Enhancements */
+.loading-enhanced {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-enhanced::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingShimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .country-card-enhanced,
+  .flag-enhanced,
+  .particle-enhanced,
+  .card-breathing,
+  .selection-ring-enhanced,
+  .title-enhanced,
+  .loading-enhanced::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .country-card-enhanced {
+    transition: box-shadow 0.2s ease !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .country-card-enhanced {
+    border: 2px solid;
+  }
+  
+  .particle-enhanced {
+    display: none;
+  }
+  
+  .geometric-pattern {
+    display: none;
+  }
+}
+
+/* Focus management for accessibility */
+.country-card-enhanced:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.2);
+}
+
+/* Print styles */
+@media print {
+  .particle-enhanced,
+  .geometric-pattern,
+  .country-card-enhanced::before {
+    display: none !important;
+  }
+  
+  .country-card-enhanced {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+  }
+}
+
+/* Performance optimizations */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* Micro-interaction helpers */
+.micro-bounce {
+  animation: microBounce 0.3s ease-out;
+}
+
+@keyframes microBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.micro-glow {
+  position: relative;
+}
+
+.micro-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, transparent, rgba(220, 38, 38, 0.3), transparent);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.micro-glow:hover::after {
+  opacity: 1;
+} 

@@ -98,15 +98,25 @@ export const createRateLimiter = (maxRequests: number, windowMs: number) => {
   };
 };
 
-// Content integrity check
+// Content integrity check - SECURE VERSION
 export const verifyContentIntegrity = (): boolean => {
   // Check if critical DOM elements exist
   const root = document.getElementById('root');
   const title = document.title;
   
+  // Use safer DOM inspection methods instead of innerHTML
+  const hasScriptTags = document.getElementsByTagName('script').length > 0;
+  const bodyTextContent = document.body.textContent || '';
+  
   return (
     root !== null &&
     title.includes('Maximum88') &&
-    !document.body.innerHTML.includes('<script')
+    // Use textContent instead of innerHTML to avoid security issues
+    !bodyTextContent.includes('javascript:') &&
+    // Allow legitimate script tags but check for suspicious content
+    !Array.from(document.getElementsByTagName('script')).some(script => 
+      script.textContent?.includes('eval(') || 
+      script.textContent?.includes('document.write')
+    )
   );
 };

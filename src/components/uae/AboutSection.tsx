@@ -1,4 +1,3 @@
-
 interface AboutSectionProps {
   language: 'en' | 'ar';
 }
@@ -27,7 +26,7 @@ const AboutSection = ({ language }: AboutSectionProps) => {
           {currentContent.description}
         </p>
         <div className="text-center">
-          <button className="bg-white text-red-600 px-8 py-3 rounded font-bold hover:bg-gray-100">
+          <button className="bg-white text-red-600 px-8 py-3 rounded font-bold hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-300">
             {currentContent.buttonText}
           </button>
         </div>

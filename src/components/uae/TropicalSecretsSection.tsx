@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 
 interface TropicalSecretsSectionProps {
@@ -69,24 +68,24 @@ const TropicalSecretsSection = ({ language }: TropicalSecretsSectionProps) => {
                 {currentContent.subtitle}
               </p>
             </div>
-            <button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold hover:bg-red-700 transition-colors shadow-lg text-lg">
+            <button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold hover:bg-red-700 hover:scale-105 hover:shadow-lg transition-all duration-300 text-lg">
               {currentContent.learnMore}
             </button>
           </div>
           
           <div 
-            className={`flex flex-col items-center transition-all duration-700 ease-out ${
+            className={`flex flex-col items-center transition-all duration-700 ease-out group cursor-pointer ${
               isVisible 
                 ? 'opacity-100 transform translate-y-0' 
                 : 'opacity-0 transform translate-y-8'
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            <div className="w-80 h-[500px] overflow-hidden rounded-2xl shadow-2xl">
+            <div className="w-80 h-[500px] overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ease-out group-hover:shadow-3xl group-hover:scale-105 group-hover:-translate-y-2">
               <img 
                 src="/lovable-uploads/6e19a3eb-eafa-4122-9093-37bdc9010213.png"
                 alt="MAXJUICE Acai Berry"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
             </div>
           </div>

@@ -74,27 +74,44 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null
   }
 
+  // Create CSS styles using React's built-in CSS-in-JS approach instead of dangerouslySetInnerHTML
+  const styles = React.useMemo(() => {
+    const cssRules: { [key: string]: React.CSSProperties } = {}
+    
+    Object.entries(THEMES).forEach(([theme, prefix]) => {
+      const selector = `${prefix} [data-chart="${id}"]`
+      const properties: React.CSSProperties = {}
+      
+      colorConfig.forEach(([key, itemConfig]) => {
+        const color =
+          itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
+          itemConfig.color
+        if (color) {
+          // Sanitize CSS custom property name and value
+          const safeCSSVar = `--color-${key.replace(/[^a-zA-Z0-9-_]/g, '')}`
+          const safeColor = color.replace(/[^#a-zA-Z0-9(),%.\s-]/g, '')
+          properties[safeCSSVar as keyof React.CSSProperties] = safeColor as any
+        }
+      })
+      
+      cssRules[selector] = properties
+    })
+    
+    return cssRules
+  }, [id, colorConfig])
+
+  // Use a style element with proper CSS generation instead of innerHTML
   return (
     <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color =
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
-      itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
-  })
-  .join("\n")}
-}
-`
-          )
-          .join("\n"),
-      }}
-    />
+      key={id}
+      suppressHydrationWarning
+    >
+      {Object.entries(styles).map(([selector, properties]) => 
+        `${selector} { ${Object.entries(properties).map(([prop, value]) => 
+          `${prop}: ${value};`
+        ).join(' ')} }`
+      ).join('\n')}
+    </style>
   )
 }
 
