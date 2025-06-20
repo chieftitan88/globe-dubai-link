@@ -1,7 +1,6 @@
 
 import { Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 interface Product {
@@ -23,7 +22,6 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, language }: ProductCardProps) => {
-  const navigate = useNavigate();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   
@@ -44,10 +42,6 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
     ));
   };
 
-  const handleProductClick = () => {
-    navigate(`/uae/shop/product/${product.id}`);
-  };
-
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
@@ -58,7 +52,7 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
   };
 
   return (
-    <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer" onClick={handleProductClick}>
+    <Card className="h-full hover:shadow-lg transition-shadow">
       <CardContent className="p-6">
         {/* Product Image */}
         <div className="h-48 rounded-lg mb-4 flex items-center justify-center bg-gray-50 relative overflow-hidden">
@@ -111,8 +105,11 @@ const ProductCard = ({ product, language }: ProductCardProps) => {
           <span className="text-sm text-gray-500">({product.reviews})</span>
         </div>
         
-        {/* View Product Button */}
-        <button className="w-full bg-red-600 text-white py-3 rounded font-medium hover:bg-red-700 transition-colors">
+        {/* View Product Button - Disabled */}
+        <button 
+          className="w-full bg-gray-400 text-white py-3 rounded font-medium cursor-not-allowed"
+          disabled
+        >
           {currentContent.viewProduct}
         </button>
       </CardContent>

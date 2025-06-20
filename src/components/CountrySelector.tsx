@@ -43,6 +43,7 @@ const countries: Country[] = [
     flag: '🇺🇸',
     description: 'Excellence in service across the land of opportunity',
     gradient: 'from-blue-600 to-red-600',
+    externalUrl: 'https://www.maximum88.us',
   },
   {
     id: 'uae',
