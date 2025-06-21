@@ -92,7 +92,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
                 {currentNav.home}
               </a>
               <button 
-                onClick={() => navigate('/uae/shop')}
+                onClick={() => navigate('/shop')}
                 className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm transition-colors"
               >
                 {currentNav.shop}
@@ -135,7 +135,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
                 </a>
                 <button 
                   onClick={() => {
-                    navigate('/uae/shop');
+                    navigate('/shop');
                     setIsMenuOpen(false);
                   }}
                   className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm transition-colors px-2 py-1 text-left"

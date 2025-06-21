@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
 import UAEWebsite from "./pages/UAEWebsite";
 import UAEShop from "./pages/UAEShop";
 import ProductDetail from "./pages/ProductDetail";
@@ -19,10 +18,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/uae" element={<UAEWebsite />} />
-          <Route path="/uae/shop" element={<UAEShop />} />
-          <Route path="/uae/shop/product/:id" element={<ProductDetail />} />
+          <Route path="/" element={<UAEWebsite />} />
+          <Route path="/shop" element={<UAEShop />} />
+          <Route path="/shop/product/:id" element={<ProductDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

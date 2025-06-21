@@ -1,7 +1,6 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LanguageToggle from '@/components/LanguageToggle';
 import Header from '@/components/uae/Header';
 import HeroSection from '@/components/uae/HeroSection';
 import ProductShowcase from '@/components/uae/ProductShowcase';
@@ -20,13 +19,13 @@ const UAEWebsite = () => {
       title: "MAXIMUM 88",
       subtitle: "CORPORATION",
       tagline: "Discover the best you, inside and out, with our integrated beauty and wellness products.",
-      backToSelection: "← Back to Country Selection"
+      backToSelection: "← Back to Home"
     },
     ar: {
       title: "ماكسيموم 88",
       subtitle: "المؤسسة",
       tagline: "اكتشف أفضل ما لديك، من الداخل والخارج، مع منتجاتنا المتكاملة للجمال والعافية.",
-      backToSelection: "← العودة لاختيار البلد"
+      backToSelection: "← العودة للرئيسية"
     }
   };
 
