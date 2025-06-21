@@ -116,6 +116,7 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
             </nav>
 
             <div className="flex items-center space-x-4 lg:hidden">
+              <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer transition-colors" />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="lg:hidden"
@@ -124,6 +125,38 @@ const Header = ({ language, content, onNavigateBack, onLanguageChange }: HeaderP
               </button>
             </div>
           </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden border-t border-gray-200 py-4">
+              <nav className="flex flex-col space-y-4">
+                <a href="#home" className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm transition-colors px-2 py-1">
+                  {currentNav.home}
+                </a>
+                <button 
+                  onClick={() => {
+                    navigate('/uae/shop');
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm transition-colors px-2 py-1 text-left"
+                >
+                  {currentNav.shop}
+                </button>
+                <a href="#about" className="text-gray-700 hover:text-red-600 font-medium tracking-wide text-sm transition-colors px-2 py-1">
+                  {currentNav.about}
+                </a>
+                
+                <div className="flex flex-col space-y-3 px-2 pt-4 border-t border-gray-200">
+                  <button className="bg-red-600 text-white px-4 py-2 rounded font-medium hover:bg-red-700 transition-colors text-sm tracking-wide">
+                    {currentNav.joinUs}
+                  </button>
+                  <button className="border border-red-600 text-red-600 px-4 py-2 rounded font-medium hover:bg-red-600 hover:text-white transition-colors text-sm tracking-wide">
+                    {currentNav.logIn}
+                  </button>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </div>
     </header>
